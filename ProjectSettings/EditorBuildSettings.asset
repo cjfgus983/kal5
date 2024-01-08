@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/MainPage.unity
+    path: Assets/ChulHyeon/_Scenes/MainPage.unity
     guid: 9edff6746de925b42985ddde29927d57
   - enabled: 1
-    path: Assets/_Scenes/Ruben1.unity
+    path: Assets/ChulHyeon/_Scenes/Ruben1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/_Scenes/Tutorial.unity
+    path: Assets/ChulHyeon/_Scenes/Tutorial.unity
     guid: 32d1fd1435831f644bb76b8cbfc0f3fc
   m_configObjects: {}
