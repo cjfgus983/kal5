@@ -7,6 +7,7 @@ TagManager:
   - Border
   - Obstacle
   - BorderBullet
+  - Bullet
   layers:
   - Default
   - TransparentFX
