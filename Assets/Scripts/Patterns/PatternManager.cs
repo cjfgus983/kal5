@@ -46,6 +46,8 @@ public class PatternManager : MonoBehaviour
             patternManager = GameObject.Find("PatternManager");
         }
 
+
+
         for (int i = patList.Count-1; i > -1; i--)
         {
             if (patList[i] == null)
@@ -79,5 +81,11 @@ public class PatternManager : MonoBehaviour
         patStartTime = 0.0f;
         patDuration = 0.0f;
         patRot = 0.0f;
+    }
+
+    IEnumerator StartPattern(float startTime, GameObject pattern)
+    {
+        yield return new WaitForSeconds(startTime);
+        pattern.gameObject.SetActive(true);
     }
 }
