@@ -31,11 +31,9 @@ public class PatternManager : MonoBehaviour
 
     PatternData pd;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -73,7 +71,6 @@ public class PatternManager : MonoBehaviour
         go.GetComponent<PatternData>().patRot = patRot;
         go.SetActive(false);
         patList.Add(go);
-
 
         patPos = Vector2.zero;
         patStartTime = 0.0f;
