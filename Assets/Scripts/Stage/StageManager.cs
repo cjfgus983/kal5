@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
+    public GameObject pm;
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -11,7 +12,7 @@ public class StageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        pm.GetComponent<PatternManager>().PatternStart();
     }
 
     // Update is called once per frame
