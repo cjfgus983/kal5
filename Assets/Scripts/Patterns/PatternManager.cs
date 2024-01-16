@@ -34,6 +34,7 @@ public class PatternManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PatternStart();
     }
 
     // Update is called once per frame
@@ -62,6 +63,14 @@ public class PatternManager : MonoBehaviour
             {
                 DestroyImmediate(transform.GetChild(i).gameObject);
             }
+        }
+    }
+
+    public void PatternStart()
+    {
+        for (int i = 0; i < patList.Count; i++)
+        {
+            StartCoroutine(StartPattern(patList[i].GetComponent<PatternData>().patStartTime, patList[i]));
         }
     }
 
