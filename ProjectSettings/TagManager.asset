@@ -8,14 +8,16 @@ TagManager:
   - Obstacle
   - BorderBullet
   - Bullet
+  - Counter
+  - Pattern
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pattern
   - Water
   - UI
-  - 
+  - Counter
   - 
   - 
   - 
