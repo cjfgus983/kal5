@@ -131,11 +131,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 77956605}
-  - component: {fileID: 77956607}
-  - component: {fileID: 77956606}
-  m_Layer: 5
-  m_Name: Fill
+  - component: {fileID: 4480532}
+  - component: {fileID: 4480531}
+  - component: {fileID: 4480530}
+  - component: {fileID: 4480529}
+  - component: {fileID: 4480528}
+  m_Layer: 0
+  m_Name: pattern13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
