@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Pattern_1_Bullet : PatternData
+public class BlueBullet : PatternData
 {
 
     //public PlayerManager playerManager; // 플레이어
     public GameObject player;
 
-	// Start is called before the first frame update
-	protected override void Start()
+    public float speed = 5f;
+    // Start is called before the first frame update
+    protected override void Start()
     {
         if (player == null)
         {
@@ -22,8 +23,8 @@ public class Pattern_1_Bullet : PatternData
 
         if (player != null)
         {
-            Vector3 dirVec = player.transform.position - transform.position; // 플레이어 바라보는 방향
-            rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse); //
+            Vector3 dirVec = (player.transform.position - transform.position).normalized; // 플레이어 바라보는 방향
+            rigid.velocity = dirVec * speed;  // 플레이어 쪽으로 이동
         }
         else
         {

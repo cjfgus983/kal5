@@ -161,7 +161,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &4480529
 Rigidbody2D:
   serializedVersion: 4
@@ -329,7 +330,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &7192269
 Rigidbody2D:
   serializedVersion: 4
@@ -596,10 +598,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1337991, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -610,7 +612,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2675982, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &91448336
 Rigidbody2D:
@@ -701,10 +703,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.057418585}
+  m_Offset: {x: -0.21864462, y: -0.03938198}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -715,7 +717,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 7.7753778}
+  m_Size: {x: 2.4987116, y: 9.827539}
   m_EdgeRadius: 0
 --- !u!50 &92986659
 Rigidbody2D:
@@ -887,7 +889,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &237885620
 Rigidbody2D:
   serializedVersion: 4
@@ -1135,6 +1138,7 @@ MonoBehaviour:
   patRotStartTime: 0
   patRotTime: 0
   player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &356231501
 Rigidbody2D:
   serializedVersion: 4
@@ -1401,7 +1405,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &380260856
 Rigidbody2D:
   serializedVersion: 4
@@ -1569,7 +1574,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &426474059
 Rigidbody2D:
   serializedVersion: 4
@@ -1870,7 +1876,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &466915362
 Rigidbody2D:
   serializedVersion: 4
@@ -2368,7 +2375,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &516034951
 Rigidbody2D:
   serializedVersion: 4
@@ -2617,7 +2625,7 @@ Transform:
   m_GameObject: {fileID: 529155435}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.44, y: 3.47, z: 0}
+  m_LocalPosition: {x: 10.43, y: 3.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2652,10 +2660,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -3.4020438}
+  m_Offset: {x: -0.6582248, y: -3.3826842}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2666,7 +2674,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 7.8040876}
+  m_Size: {x: 2.3165498, y: 9.778808}
   m_EdgeRadius: 0
 --- !u!50 &529155438
 Rigidbody2D:
@@ -2730,6 +2738,63 @@ Transform:
   - {fileID: 1899589781}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &563044396
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055996828618736186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779672222406600186, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
+      propertyPath: m_Name
+      value: RedBullet (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2bc62fd9aa4308419ca17e1350556de, type: 3}
 --- !u!1 &581446471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,7 +3083,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &732568960
 Rigidbody2D:
   serializedVersion: 4
@@ -3263,10 +3329,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.4402843, y: 0}
+  m_Offset: {x: -0.5623636, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3277,7 +3343,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.091409, y: 1}
+  m_Size: {x: 22.261332, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &775044211
 Rigidbody2D:
@@ -3344,7 +3410,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &814178868
 Rigidbody2D:
   serializedVersion: 4
@@ -3566,7 +3633,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &871563619
 Rigidbody2D:
   serializedVersion: 4
@@ -3734,7 +3802,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &949757622
 Rigidbody2D:
   serializedVersion: 4
@@ -3934,7 +4003,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &1126597189
 Rigidbody2D:
   serializedVersion: 4
@@ -4229,22 +4299,22 @@ PrefabInstance:
     - target: {fileID: 242056814324767646, guid: 5009b815567302d4ab609a7c045673dc, type: 3}
       propertyPath: pattern
       value: 
-      objectReference: {fileID: 1869884046062413454, guid: 09280ba91934c23449675401dfea8673, type: 3}
+      objectReference: {fileID: 7513806652930789504, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
     - target: {fileID: 242056814324767646, guid: 5009b815567302d4ab609a7c045673dc, type: 3}
       propertyPath: patPos.x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 242056814324767646, guid: 5009b815567302d4ab609a7c045673dc, type: 3}
       propertyPath: patPos.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 242056814324767646, guid: 5009b815567302d4ab609a7c045673dc, type: 3}
       propertyPath: patDuration
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 242056814324767646, guid: 5009b815567302d4ab609a7c045673dc, type: 3}
       propertyPath: patStartTime
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 242056814324767646, guid: 5009b815567302d4ab609a7c045673dc, type: 3}
       propertyPath: patList.Array.size
@@ -5158,7 +5228,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &1451010599
 Rigidbody2D:
   serializedVersion: 4
@@ -5375,13 +5446,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4814708240156908242, guid: 94471cea1446b4144bc3984339bd0bb6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5476428851174075992, guid: 94471cea1446b4144bc3984339bd0bb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.76
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5476428851174075992, guid: 94471cea1446b4144bc3984339bd0bb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.73
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 5476428851174075992, guid: 94471cea1446b4144bc3984339bd0bb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5544,6 +5619,75 @@ MonoBehaviour:
   curHP: 100
   getDamage: 10
   player: {fileID: 0}
+--- !u!1001 &1504540834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1119307555403231523, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087347315146746578, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821927218497974428, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513806652930789504, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_Name
+      value: bullet_blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513806652930789504, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80f6c9c0a998c384db96cd6d664889eb, type: 3}
 --- !u!1 &1504997685
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,7 +5726,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &1504997687
 Rigidbody2D:
   serializedVersion: 4
@@ -5792,7 +5937,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &1692214802
 Rigidbody2D:
   serializedVersion: 4
@@ -6925,7 +7071,7 @@ Transform:
   m_GameObject: {fileID: 1929722373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 2, z: -2}
+  m_LocalPosition: {x: 8.25, y: 3.2, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6969,7 +7115,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &1961275447
 Rigidbody2D:
   serializedVersion: 4
@@ -7137,7 +7284,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &1961505477
 Rigidbody2D:
   serializedVersion: 4
@@ -7305,7 +7453,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &1990390747
 Rigidbody2D:
   serializedVersion: 4
@@ -7473,7 +7622,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &1997012536
 Rigidbody2D:
   serializedVersion: 4
@@ -7641,7 +7791,8 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  player: {fileID: 0}
+  player: {fileID: 1586872059}
+  speed: 5
 --- !u!50 &2062007006
 Rigidbody2D:
   serializedVersion: 4
@@ -8078,3 +8229,5 @@ SceneRoots:
   - {fileID: 1461927079}
   - {fileID: 1306578191}
   - {fileID: 1272935370}
+  - {fileID: 1504540834}
+  - {fileID: 563044396}
