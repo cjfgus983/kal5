@@ -19,7 +19,7 @@ public class HPBar : MonoBehaviour
 
 	private void Awake()
 	{
-        player.GetComponent<Player>();
+        //player.GetComponent<Player>();
     }
 	void Start()
     {
