@@ -10,12 +10,13 @@ public class RedBullet : PatternData
     public GameObject player;
     public GameObject yellowBulletPrefab; // 노란 총알 프리팹
 
-    public float speed = 5f;
+    public float speed = 20f;
     Rigidbody2D rigid;
     Vector3 lastVelocity;
 
-	// Start is called before the first frame update
-	protected override void Start()
+
+    // Start is called before the first frame update
+    protected override void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
 
@@ -30,7 +31,8 @@ public class RedBullet : PatternData
         if (player != null)
         {
             Vector3 dirVec = (player.transform.position - transform.position).normalized; // 플레이어 바라보는 방향
-            rigid.velocity = dirVec * speed;  // 플레이어 쪽으로 이동
+            rigid.velocity = dirVec * speed;
+            //transform.position += dirVec * speed;  // 플레이어 쪽으로 이동
         }
         else
         {
@@ -44,6 +46,7 @@ public class RedBullet : PatternData
     protected override void Update()
     {
         lastVelocity = rigid.velocity;
+
         base.Update();
     }
 

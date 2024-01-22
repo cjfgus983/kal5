@@ -200,7 +200,7 @@ MonoBehaviour:
   patRotStartTime: 0
   patRotTime: 0
   player: {fileID: 0}
-  prefabToShoot: {fileID: 0}
+  prefabToShoot: {fileID: 7561406026144113745, guid: 0011bbce95252e24b81f9da78ce25d22, type: 3}
   speed: 5
   rotationSpeed: 300
   stopAndStayTime: 2

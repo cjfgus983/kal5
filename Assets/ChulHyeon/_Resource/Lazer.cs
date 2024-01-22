@@ -34,6 +34,7 @@ public class Lazer : MonoBehaviour
         // 두 오브젝트를 삭제
 
         Destroy(lazerAttackObject);
+        yield return new WaitForSeconds(.01f);
         Destroy(gameObject);
     }
 }
