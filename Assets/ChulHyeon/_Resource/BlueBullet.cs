@@ -9,9 +9,10 @@ public class BlueBullet : PatternData
     //public PlayerManager playerManager; // 플레이어
     public GameObject player;
 
-    public float speedMultiplier = 20f;
+    public float speed = 5f;
 
     Vector3 dirVec;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -26,8 +27,6 @@ public class BlueBullet : PatternData
         if (player != null)
         {
             Vector3 dirVec = (player.transform.position - transform.position).normalized; // 플레이어 바라보는 방향
-            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position); // 플레이어와의 거리
-            float speed = speedMultiplier / distanceToPlayer; // 거리에 따른 속도 조절
             rigid.velocity = dirVec * speed;
         }
         else

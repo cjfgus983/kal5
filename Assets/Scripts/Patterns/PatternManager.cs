@@ -54,7 +54,7 @@ public class PatternManager : MonoBehaviour
                 patList.RemoveAt(i);
                 continue;
             }
-            patList[i].name = "pattern" + i;
+            //patList[i].name = "pattern" + i;
         }
 
         for (int i = transform.childCount-1; i > -1; i--)
