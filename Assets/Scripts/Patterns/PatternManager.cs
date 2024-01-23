@@ -11,6 +11,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class PatternManager : MonoBehaviour
 {
+
     public List<GameObject> patList = new List<GameObject>();
 
     public GameObject patternManager;
@@ -45,25 +46,24 @@ public class PatternManager : MonoBehaviour
             patternManager = GameObject.Find("PatternManager");
         }
 
-
-
         for (int i = patList.Count-1; i > -1; i--)
         {
-            if (patList[i] == null)
+			if (patList[i] == null)
+			{
+				patList.RemoveAt(i);
+				continue;
+			}
+			patList[i].name = "pattern" + i;
+		}
+
+        foreach (Transform child in transform)
+        {
+            if (!patList.Contains(child.gameObject))
             {
-                patList.RemoveAt(i);
-                continue;
+                DestroyImmediate(child.gameObject);
             }
-            patList[i].name = "pattern" + i;
         }
 
-        for (int i = transform.childCount-1; i > -1; i--)
-        {
-            if (!patList.Contains(transform.GetChild(i).gameObject))
-            {
-                DestroyImmediate(transform.GetChild(i).gameObject);
-            }
-        }
     }
 
     public void PatternStart()

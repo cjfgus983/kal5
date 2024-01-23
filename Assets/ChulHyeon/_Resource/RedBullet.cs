@@ -10,7 +10,7 @@ public class RedBullet : PatternData
     public GameObject player;
     public GameObject yellowBulletPrefab; // 노란 총알 프리팹
 
-    public float speed = 20f;
+    public float speed = 5f;
     Rigidbody2D rigid;
     Vector3 lastVelocity;
 
@@ -30,9 +30,11 @@ public class RedBullet : PatternData
 
         if (player != null)
         {
-            Vector3 dirVec = (player.transform.position - transform.position).normalized; // 플레이어 바라보는 방향
+            // 플레이어를 바라보도록 방향 설정
+            Vector3 dirVec = (player.transform.position - transform.position).normalized;
+
+            // 설정된 방향으로 이동
             rigid.velocity = dirVec * speed;
-            //transform.position += dirVec * speed;  // 플레이어 쪽으로 이동
         }
         else
         {

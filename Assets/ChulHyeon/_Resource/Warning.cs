@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Warning : MonoBehaviour
+public class Warning : PatternData
 {
     public GameObject danger;
     public GameObject longRed;
 
 
-    void Start()
+    protected override void Start()
     {
         GameObject dangerObject = Instantiate(danger, transform.position, Quaternion.identity);
         dangerObject.transform.parent = transform;
@@ -16,7 +16,7 @@ public class Warning : MonoBehaviour
         Invoke("RemoveObject", 2f);
     }
 
-    void Update()
+    protected override void Update()
     {
     }
     void RemoveObject()

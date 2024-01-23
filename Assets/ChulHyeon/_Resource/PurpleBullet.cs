@@ -70,7 +70,7 @@ public class PurpleBullet : PatternData
         Moving = false;
         yield return new WaitForSeconds(2f);
         ShootPrefabs();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     void ShootPrefabs()

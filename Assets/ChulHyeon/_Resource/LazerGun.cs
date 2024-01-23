@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LazerGun : MonoBehaviour
+public class LazerGun : PatternData
 {
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         Invoke("RemoveObject", 2f);
     }
