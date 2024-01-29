@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 using Unity.VisualScripting;
 
@@ -32,10 +33,31 @@ public class PatternManager : MonoBehaviour
 
     PatternData pd;
 
-    // Start is called before the first frame update
+
+    public TextAsset textFile;
+
     void Start()
     {
-        
+        if (textFile != null)
+        {
+            StringReader reader = new StringReader(textFile.text);
+
+            while (true)
+            {
+                string line = reader.ReadLine();
+
+                if (line == null)
+                    break;
+
+                Debug.Log("Line: " + line);
+            }
+
+            reader.Close();
+        }
+        else
+        {
+            Debug.LogError("Text file not assigned!");
+        }
     }
 
     // Update is called once per frame

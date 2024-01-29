@@ -32,7 +32,7 @@ public class checkTiming : MonoBehaviour
         // 파일이 없으면 생성하고, 있으면 내용을 추가
         using (StreamWriter writer = new StreamWriter(filePath, true))
         {
-            writer.WriteLine("클릭한 시간: " + formattedTime);
+            writer.WriteLine(formattedTime + "/0/0/3/bullet_blue");
         }
     }
 }
