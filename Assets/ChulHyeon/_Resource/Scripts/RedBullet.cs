@@ -40,7 +40,7 @@ public class RedBullet : PatternData
         {
             Debug.LogWarning("플레이어가 할당되지 않았습니다!");
         }
-       
+        StartCoroutine(SetFalse());
 
     }
 
