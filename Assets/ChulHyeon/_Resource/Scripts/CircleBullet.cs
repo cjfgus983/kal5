@@ -37,13 +37,12 @@ public class CircleBullet : PatternData
             float x = Mathf.Cos(angle * Mathf.Deg2Rad);
             float y = Mathf.Sin(angle * Mathf.Deg2Rad);
 
-            // 생성 위치 조정 (예: 원의 중심으로부터 반지름 2만큼 떨어진 위치)
             Vector3 spawnPosition = new Vector3(x, y, 0);
 
             // 총알 생성
             GameObject newBullet = Instantiate(bullet, transform.position + spawnPosition, Quaternion.identity);
 
-            Vector3 rotVec = Vector3.forward * 360 * i / roundNum + Vector3.forward * (-90);
+            Vector3 rotVec = Vector3.forward * 360 * i / roundNum + Vector3.forward * (-90); // 0 ~ 360 까지 회전
             newBullet.transform.Rotate(rotVec);
 
             Rigidbody2D bulletRigidbody = newBullet.GetComponent<Rigidbody2D>();
