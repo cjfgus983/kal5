@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lazer : MonoBehaviour
 {
     public GameObject lazerAttack;
+    public float timeDestroy = 1f;
 
     void Start()
     {
@@ -24,17 +25,15 @@ public class Lazer : MonoBehaviour
         Vector3 spawnPosition = transform.position + rotation * new Vector3(0, 0.15f, -1);
 
 
-        // 1초 대기
+        //생성 후 1초 대기
         yield return new WaitForSeconds(1f);
 
-        // 새로운 오브젝트를 생성하고, 1초 대기
+        // 발사하고 1초 대기
         GameObject lazerAttackObject = Instantiate(lazerAttack, spawnPosition, rotation);
+        lazerAttackObject.transform.parent = transform.parent;
         yield return new WaitForSeconds(1f);
 
-        // 두 오브젝트를 삭제
-
-        lazerAttackObject.SetActive(false);
-        yield return new WaitForSeconds(.01f);
-        Destroy(gameObject);
+        // 오브젝트 삭제
+        gameObject.SetActive(false);
     }
 }

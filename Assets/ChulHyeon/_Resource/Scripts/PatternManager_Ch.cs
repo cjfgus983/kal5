@@ -55,6 +55,26 @@ public class PatternManager_Ch : MonoBehaviour
                 go.SetActive(false);
                 patList.Add(go);
             }
+            else if(parts.Length == 6)
+            {
+                float patStartTime = float.Parse(parts[0]);
+                float posX = float.Parse(parts[1]);
+                float posY = float.Parse(parts[2]);
+                float patDuration = float.Parse(parts[3]);
+                string prefabName = parts[4];
+                float patRot = float.Parse(parts[5]);
+
+                // 이 부분에 필요한 처리를 추가하세요.
+                Vector2 patPos = new Vector2(posX, posY);
+                GameObject patternPrefab = Resources.Load<GameObject>(prefabName);
+                GameObject go = Instantiate(patternPrefab, patPos, Quaternion.Euler(0, 0, patRot), patternManager.transform);
+                go.GetComponent<PatternData>().patStartTime = patStartTime;
+                go.GetComponent<PatternData>().patDuration = patDuration;
+                go.GetComponent<PatternData>().patRot = patRot;
+                // spawnData
+                go.SetActive(false);
+                patList.Add(go);
+            }
         }
 
         reader.Close();
