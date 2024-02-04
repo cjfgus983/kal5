@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public int hp;
     bool canCounter;
-    bool isCounter;
+    public bool isCounter;
     bool canHit;
     bool counterHit;
     public bool canMove;

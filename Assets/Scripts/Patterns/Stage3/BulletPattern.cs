@@ -47,4 +47,11 @@ public class BulletPattern : PatternData
         rigid.AddForce(Vector2.right * bulletSpeed*bulletDirect.x, ForceMode2D.Impulse);
         rigid.AddForce(Vector2.up * bulletSpeed* bulletDirect.y, ForceMode2D.Impulse);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            Destroy(this);
+        }
+    }
 }
