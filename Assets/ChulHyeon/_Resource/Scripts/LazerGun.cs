@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class LazerGun : PatternData
 {
-    // Start is called before the first frame update
+
     protected override void Start()
     {
         float disT = patDuration - patStartTime;
         Invoke("RemoveObject", disT);
 
-        //if (transform.position.x < -4f)
-        //{
-        //    RotateObject(180f);
-        //}
         Transform childTransform = transform.Find("lazerpointer");
         Lazer lazerpointer = childTransform.GetComponent<Lazer>();
         //lazerpointer.timeDestroy = patDuration;
     }
-    void RemoveObject()
+
+	protected override void Update()
+	{
+    }
+
+	void RemoveObject()
     {
         Destroy(gameObject);
     }

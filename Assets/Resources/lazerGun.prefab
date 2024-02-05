@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lazerAttack: {fileID: 2179504905577218355, guid: d3da88856341c944486bd654d1c95625, type: 3}
+  timeDestroy: 1
 --- !u!1 &7482165977972120419
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,3 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b9309cb528e4a4aad4144b8531c432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patStartTime: 0
+  patDuration: 0
+  patRot: 0
+  patRotAng: 0
+  patRotStartTime: 0
+  patRotTime: 0
+  shakeIntensity: 0.1
+  shakeSpeed: 5

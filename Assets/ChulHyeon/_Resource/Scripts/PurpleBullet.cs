@@ -17,7 +17,7 @@ public class PurpleBullet : PatternData
     public float rotationSpeed = 300f; // 회전 속도
 
     // 이동을 멈추고 제자리에 머무를 시간
-    public float stopAndStayTime = 2f; //2초뒤에 멈춤
+    public float stopAndStayTime = 1f; //1초뒤에 멈춤
     private bool Moving = true;
 
     // Start is called before the first frame update
@@ -68,7 +68,7 @@ public class PurpleBullet : PatternData
         // 이동을 멈추고 제자리에 머무릅니다.
         rigid.velocity = Vector2.zero;
         Moving = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f); //1초 뒤에 터짐
         ShootPrefabs();
         gameObject.SetActive(false);
     }

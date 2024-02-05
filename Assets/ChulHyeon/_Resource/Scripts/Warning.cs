@@ -7,18 +7,25 @@ public class Warning : PatternData
     public GameObject danger;
     public GameObject longRed;
 
+    public GameObject player;
 
     protected override void Start()
     {
         GameObject dangerObject = Instantiate(danger, transform.position, Quaternion.identity);
         dangerObject.transform.parent = transform;
         // 2초 후에 RemoveObject 함수 호출
-        Invoke("RemoveObject", 2f);
+        Invoke("RemoveObject", 1f);
+
+        player = GameObject.Find("Player");
     }
 
     protected override void Update()
     {
-    }
+		Vector3 newPosition = transform.position;
+		newPosition.x = player.transform.position.x;
+		transform.position = newPosition;
+
+	}
     void RemoveObject()
     {
         // 이 오브젝트의 회전
