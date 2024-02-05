@@ -12,7 +12,7 @@ public class BorderPattern : PatternData
     protected override void Start()
     {
         base.Start();
-        StartCoroutine(Expansion());
+        StartCoroutine(Contraction());
     }
 
     // Update is called once per frame
@@ -22,11 +22,11 @@ public class BorderPattern : PatternData
         timer += Time.deltaTime;
         if (timer + 0.5f >= patDur)
         {
-            StartCoroutine(Contraction());
+            StartCoroutine(Expansion());
         }
     }
 
-    IEnumerator Expansion()
+    IEnumerator Contraction()
     {
         for (int i=0;i<10;i++)
         {
@@ -36,7 +36,7 @@ public class BorderPattern : PatternData
             yield return new WaitForSeconds(0.05f);
         }
     }
-    IEnumerator Contraction()
+    IEnumerator Expansion()
     {
         for (int i = 0; i < 10; i++)
         {
