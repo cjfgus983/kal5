@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class homingBullet : PatternData
 {
-    public bool enableFeature = true;
     public float moveSpeed = 5f; // 이동 속도 조절을 위한 변수
     private Transform player; // 플레이어의 Transform을 저장할 변수
     public Vector3 moveDirection;

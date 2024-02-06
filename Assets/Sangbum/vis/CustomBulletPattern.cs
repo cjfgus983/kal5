@@ -9,7 +9,7 @@ public class CustomBulletPattern : PatternData
     public Vector3 moveDirection;
     public int bulletCount = 5; // 생성할 총알의 개수
     public float bulletSpreadAngle = 10f; // 총알 간의 각도
-    public homingBullet bulletPrefab; // 총알 프리팹
+    public straightBullet bulletPrefab; // 총알 프리팹
 
     protected override void Start()
     {
@@ -42,7 +42,7 @@ public class CustomBulletPattern : PatternData
             Vector3 currentBulletDirection = Quaternion.Euler(0f, 0f, angle) * moveDirection;
 
             // 총알 생성 및 발사
-            homingBullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            straightBullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             if (bullet != null)
             {
                 // CustomBulletPattern의 moveDirection 변수를 설정합니다.
@@ -50,6 +50,7 @@ public class CustomBulletPattern : PatternData
                 bullet.patStartTime = patStartTime;
                 bullet.patDuration = patDuration;
                 bullet.moveSpeed = moveSpeed;
+                bullet.gameObject.SetActive(true);
             }
             else
             {
