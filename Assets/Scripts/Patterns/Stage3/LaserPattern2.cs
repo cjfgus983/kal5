@@ -13,7 +13,8 @@ public class LaserPattern2 : PatternData
     public List<GameObject> setFalseChild = new List<GameObject>();
     public List<GameObject> setTrueChild = new List<GameObject>();
     private bool isAiming = true;
-    public GameObject player;
+    Vector3 targetPosition;
+    GameObject player;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -27,12 +28,11 @@ public class LaserPattern2 : PatternData
         base.Update();
         if (isAiming)
         {
-            child1.LookAt(player.transform);
-            child2.LookAt(player.transform);
-            child3.LookAt(player.transform);
-            child1.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
-            child2.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
-            child3.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+            targetPosition = player.transform.position;
+            child1.rotation = Quaternion.LookRotation(Vector3.forward, targetPosition - child1.position);
+            child2.rotation = Quaternion.LookRotation(Vector3.forward, targetPosition - child2.position);
+            child3.rotation = Quaternion.LookRotation(Vector3.forward, targetPosition - child3.position);
+
             aimTimer += Time.deltaTime;
             if (aimTimer >= aimDuration)
             {
@@ -43,12 +43,12 @@ public class LaserPattern2 : PatternData
     }
     IEnumerator FireBullet()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         for (int i = 0; i < setFalseChild.Count; i++)
         {
             setFalseChild[i].SetActive(false);
         }
-        yield return new WaitForSeconds(bulletTiming - 0.5f);
+        yield return new WaitForSeconds(bulletTiming - 0.8f);
         for (int i = 0; i < setTrueChild.Count; i++)
         {
             setTrueChild[i].SetActive(true);
