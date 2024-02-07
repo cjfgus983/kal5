@@ -21,6 +21,17 @@ public class TestPattern : MonoBehaviour
         {
             dir = 1;
         }
-        transform.position += new Vector3(0, dir * 20 * Time.deltaTime, 0);
+        this.transform.position += new Vector3(0, dir * 20 * Time.deltaTime, 0);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (collision.GetComponent<PlayerController>().isCounter)
+            {
+                dir = dir * -1;
+            }
+        }
     }
 }

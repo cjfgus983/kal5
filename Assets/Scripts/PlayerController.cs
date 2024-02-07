@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
     bool canHit;
     bool counterHit;
     public bool canMove;
+    float vertical;
+    float horizontal;
+
+    public BoxCollider2D box;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +24,8 @@ public class PlayerController : MonoBehaviour
         canHit = true;
         counterHit = false;
         canMove = true;
+        vertical = 0;
+        horizontal = 0;
     }
 
     // Update is called once per frame
@@ -51,8 +58,22 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        Vector3 inputkey = new Vector2(Input.GetAxisRaw("Horizontal") , Input.GetAxisRaw("Vertical")).normalized * moveSpeed * Time.deltaTime;
-        transform.position += inputkey;
+        Vector3 inputkey = new Vector2(horizontal, vertical);
+
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+
+        if (transform.position.y > 9.9f - this.gameObject.transform.localScale.y / 2 && vertical > 0 || transform.position.y < -9.9f + this.gameObject.transform.localScale.y / 2 && vertical < 0)
+        {
+            vertical = 0;
+        }
+
+        if (transform.position.x > 17.65f - this.gameObject.transform.localScale.x / 2 && horizontal > 0 || transform.position.x < -17.65f + this.gameObject.transform.localScale.x / 2 && horizontal < 0)
+        {
+            horizontal = 0;
+        }
+
+        transform.position += inputkey.normalized * moveSpeed * Time.deltaTime;
     }
 
     void Damage()
@@ -74,11 +95,10 @@ public class PlayerController : MonoBehaviour
                 isCounter = true;
                 canCounter = false;
                 canMove = false;
+                Debug.LogError("Counter");
                 StartCoroutine(CounterDecision());
             }
         }
-
-        
     }
 
     IEnumerator CounterDecision()
