@@ -13,8 +13,10 @@ public class PlayerController : MonoBehaviour
     public bool canMove;
     float vertical;
     float horizontal;
+    public float counterCooltime;
 
     public BoxCollider2D box;
+    public BoxCollider2D border;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         vertical = 0;
         horizontal = 0;
+        border = GameObject.Find("Border").GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -63,12 +66,12 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        if (transform.position.y > 9.9f - this.gameObject.transform.localScale.y / 2 && vertical > 0 || transform.position.y < -9.9f + this.gameObject.transform.localScale.y / 2 && vertical < 0)
+        if (transform.position.y >= border.size.y / 2 - 0.4f - this.gameObject.transform.localScale.y / 2 && vertical > 0 || transform.position.y <= -1 * border.size.y / 2  + 0.4f + this.gameObject.transform.localScale.y / 2 && vertical < 0)
         {
             vertical = 0;
         }
 
-        if (transform.position.x > 17.65f - this.gameObject.transform.localScale.x / 2 && horizontal > 0 || transform.position.x < -17.65f + this.gameObject.transform.localScale.x / 2 && horizontal < 0)
+        if (transform.position.x >= border.size.x / 2 - 0.4f - this.gameObject.transform.localScale.x / 2 && horizontal > 0 || transform.position.x <= -1 * border.size.x / 2 + 0.4f + this.gameObject.transform.localScale.x / 2 && horizontal < 0)
         {
             horizontal = 0;
         }
@@ -108,13 +111,13 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         if (!counterHit)
         {
-            StartCoroutine(CounterFail());
+            StartCoroutine(CounterFail(counterCooltime));
         }
     }
 
-    IEnumerator CounterFail()
+    IEnumerator CounterFail(float cooltime)
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(cooltime);
         canCounter = true;
     }
 
