@@ -16,6 +16,13 @@ public class Player : MonoBehaviour
 
     public bool getDamage = false;
 
+    public bool rythmMode = false;
+    private bool isInRythmMode = false; // 처음 리듬게임모드로 들어갔을 때 위치 고정 위함
+    //private bool isHorizontalInputPressed = false;
+    //private float[] rythmXPositions = { -6f, -1f, 1f, 6f };
+    //private int currentRythmIndex = 1; // 시작 위치는 0이 아닌 1로 설정
+
+    public GameObject sheild;
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,31 +30,96 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+        sheild.SetActive(false);
     }
 
 	void Update()
     {
-        //플레이어 이동
-        float h = Input.GetAxisRaw("Horizontal");
-        ////Border움직임 제한
-        if ((isTouchRight && h == 1) || (isTouchLeft && h == -1))
-            h = 0;
-        float v = Input.GetAxisRaw("Vertical");
-        ///Border움직임 제한
-        if ((isTouchTop && v == 1) || (isTouchBottom && v == -1))
-            v = 0;
-        Vector3 curPos = transform.position;
-        Vector3 nextPos = new Vector3(h, v, 0) * speed * Time.deltaTime;
-        transform.position = curPos + nextPos;
-        //플레이어 방향전환
-        if (h==-1)
+        if(rythmMode) //리듬게임 모드 일 때
 		{
-            spriteRenderer.flipX = true;
-        }
-        else
-            spriteRenderer.flipX = false;
+            if (!isInRythmMode)// 처음 진입할 때 위치 고정
+            {
+                isInRythmMode = true;
+                StartCoroutine(MoveToRythmPosition(new Vector3(0f, 0f, 0f), 0.1f)); // 1초 동안 이동
+                
+            }
+            sheild.SetActive(true);
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
 
+            if(h ==1) // 오
+			{
+                sheild.transform.position = new Vector3(1f, 0, 0);
+                sheild.transform.rotation = Quaternion.identity;
+            }
+            if (h == -1) //왼
+            {
+                sheild.transform.position = new Vector3(-1f, 0, 0);
+                sheild.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+            if (v == -1) //아래
+            {
+                sheild.transform.position = new Vector3(0, -1f, 0);
+                sheild.transform.rotation = Quaternion.Euler(0, 0, 270);
+            }
+            if (v == 1) //위
+            {
+                sheild.transform.position = new Vector3(0, 1f, 0);
+                sheild.transform.rotation = Quaternion.Euler(0, 0, 90);
+            }
+
+            //        if (h == -1 && !isHorizontalInputPressed) // 처음 왼쪽 키를 누른 상태라면
+            //        {
+            //            isHorizontalInputPressed = true; //누른 상태로 변경하고
+            //            if(currentRythmIndex != 0) // 가장 왼쪽에 있는 상황이 아닐 때만
+            //{
+            //                currentRythmIndex -= 1;
+            //            }
+            //        }
+            //        else if (h == 1 && !isHorizontalInputPressed)
+            //        {
+            //            isHorizontalInputPressed = true; //누른 상태로 변경하고
+            //            if (currentRythmIndex != 3) // 가장 오른쪽에 있는 상황이 아닐 때만
+            //            {
+            //                currentRythmIndex += 1;
+            //            }
+            //        }
+            //        else if (h == 0 && isHorizontalInputPressed)
+            //        {
+            //            isHorizontalInputPressed = false;
+            //        }
+            //        transform.position = new Vector3(rythmXPositions[currentRythmIndex], -4f, 0f);
+        }
+
+		else // 기본 움직임
+		{
+            if(isInRythmMode) //리듬게임 모드에서 탈출하면
+			{
+                StartCoroutine(MoveToRythmPosition(new Vector3(0f, 0f, 0f), 1f)); // 1초 동안 이동
+                isInRythmMode = false;
+            }
+
+            sheild.SetActive(false);
+            //플레이어 이동
+            float h = Input.GetAxisRaw("Horizontal");
+            ////Border움직임 제한
+            if ((isTouchRight && h == 1) || (isTouchLeft && h == -1))
+                h = 0;
+            float v = Input.GetAxisRaw("Vertical");
+            ///Border움직임 제한
+            if ((isTouchTop && v == 1) || (isTouchBottom && v == -1))
+                v = 0;
+            Vector3 curPos = transform.position;
+            Vector3 nextPos = new Vector3(h, v, 0) * speed * Time.deltaTime;
+            transform.position = curPos + nextPos;
+            //플레이어 방향전환
+            if (h == -1)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else
+                spriteRenderer.flipX = false;
+        }
     }
 	void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -115,4 +187,20 @@ public class Player : MonoBehaviour
             spriteRenderer.color = new Color(1, 1, 1, 1);
         }
     }
+    IEnumerator MoveToRythmPosition(Vector3 targetPosition, float moveTime)
+    {
+        float elapsedTime = 0f;
+        Vector3 startingPosition = transform.position;
+
+        while (elapsedTime < moveTime)
+        {
+            transform.position = Vector3.Lerp(startingPosition, targetPosition, elapsedTime / moveTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition; // 정확한 위치로 보정
+    }
 }
+
+
