@@ -10,7 +10,6 @@ TagManager:
   - Bullet
   - Counter
   - Pattern
-  - Portal
   layers:
   - Default
   - TransparentFX
