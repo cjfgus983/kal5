@@ -55,7 +55,7 @@ public class RedClap : PatternData
         currentColor.a = (currentColor.a == 0.3f) ? 0.7f : 0.3f;
         objectRenderer.material.color = currentColor;
     }
-
+ 
     private void SpawnNewObject()
     {
         // 현재 오브젝트와 동일한 위치에 새로운 오브젝트 생성

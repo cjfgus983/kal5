@@ -18,9 +18,11 @@ public class Player : MonoBehaviour
 
     public bool rythmMode = false;
     private bool isInRythmMode = false; // 처음 리듬게임모드로 들어갔을 때 위치 고정 위함
-    private bool isHorizontalInputPressed = false;
-    private float[] rythmXPositions = { -6f, -1f, 1f, 6f };
-    private int currentRythmIndex = 1; // 시작 위치는 0이 아닌 1로 설정
+    //private bool isHorizontalInputPressed = false;
+    //private float[] rythmXPositions = { -6f, -1f, 1f, 6f };
+    //private int currentRythmIndex = 1; // 시작 위치는 0이 아닌 1로 설정
+
+    public GameObject sheild;
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+        sheild.SetActive(false);
     }
 
 	void Update()
@@ -38,30 +40,55 @@ public class Player : MonoBehaviour
             if (!isInRythmMode)// 처음 진입할 때 위치 고정
             {
                 isInRythmMode = true;
-                StartCoroutine(MoveToRythmPosition(new Vector3(rythmXPositions[currentRythmIndex], -4f, 0f), 1f)); // 1초 동안 이동
+                StartCoroutine(MoveToRythmPosition(new Vector3(0f, 0f, 0f), 0.1f)); // 1초 동안 이동
+                
             }
+            sheild.SetActive(true);
             float h = Input.GetAxisRaw("Horizontal");
-            if (h == -1 && !isHorizontalInputPressed) // 처음 왼쪽 키를 누른 상태라면
-            {
-                isHorizontalInputPressed = true; //누른 상태로 변경하고
-                if(currentRythmIndex != 0) // 가장 왼쪽에 있는 상황이 아닐 때만
-				{
-                    currentRythmIndex -= 1;
-                }
+            float v = Input.GetAxisRaw("Vertical");
+
+            if(h ==1) // 오
+			{
+                sheild.transform.position = new Vector3(1f, 0, 0);
+                sheild.transform.rotation = Quaternion.identity;
             }
-            else if (h == 1 && !isHorizontalInputPressed)
+            if (h == -1) //왼
             {
-                isHorizontalInputPressed = true; //누른 상태로 변경하고
-                if (currentRythmIndex != 3) // 가장 오른쪽에 있는 상황이 아닐 때만
-                {
-                    currentRythmIndex += 1;
-                }
+                sheild.transform.position = new Vector3(-1f, 0, 0);
+                sheild.transform.rotation = Quaternion.Euler(0, 0, 180);
             }
-            else if (h == 0 && isHorizontalInputPressed)
+            if (v == -1) //아래
             {
-                isHorizontalInputPressed = false;
+                sheild.transform.position = new Vector3(0, -1f, 0);
+                sheild.transform.rotation = Quaternion.Euler(0, 0, 270);
             }
-            transform.position = new Vector3(rythmXPositions[currentRythmIndex], -4f, 0f);
+            if (v == 1) //위
+            {
+                sheild.transform.position = new Vector3(0, 1f, 0);
+                sheild.transform.rotation = Quaternion.Euler(0, 0, 90);
+            }
+
+            //        if (h == -1 && !isHorizontalInputPressed) // 처음 왼쪽 키를 누른 상태라면
+            //        {
+            //            isHorizontalInputPressed = true; //누른 상태로 변경하고
+            //            if(currentRythmIndex != 0) // 가장 왼쪽에 있는 상황이 아닐 때만
+            //{
+            //                currentRythmIndex -= 1;
+            //            }
+            //        }
+            //        else if (h == 1 && !isHorizontalInputPressed)
+            //        {
+            //            isHorizontalInputPressed = true; //누른 상태로 변경하고
+            //            if (currentRythmIndex != 3) // 가장 오른쪽에 있는 상황이 아닐 때만
+            //            {
+            //                currentRythmIndex += 1;
+            //            }
+            //        }
+            //        else if (h == 0 && isHorizontalInputPressed)
+            //        {
+            //            isHorizontalInputPressed = false;
+            //        }
+            //        transform.position = new Vector3(rythmXPositions[currentRythmIndex], -4f, 0f);
         }
 
 		else // 기본 움직임
@@ -72,7 +99,7 @@ public class Player : MonoBehaviour
                 isInRythmMode = false;
             }
 
-
+            sheild.SetActive(false);
             //플레이어 이동
             float h = Input.GetAxisRaw("Horizontal");
             ////Border움직임 제한

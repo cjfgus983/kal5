@@ -17,7 +17,6 @@ public class BlueBullet : PatternData
         if (player == null)
         {
             player = GameObject.Find("Player");
-            Debug.Log("find·Î Ã£À½");
         }
 
         Rigidbody2D rigid = GetComponent<Rigidbody2D>();

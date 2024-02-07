@@ -127,54 +127,54 @@
 68.29/-3/-3/0.345/warningMagma
 #68.64/-3/-3/0.345/warningMagma
 # 다시 기본 박자
-71.46/-3/-3/3/bullet_blue
-71.93/-3/-3/3/bullet_blue
-72.15/-3/-3/3/bullet_blue
-72.53/-3/-3/3/bullet_blue
-73.21/-3/-3/3/bullet_blue
-73.52/-3/-3/3/bullet_blue
+#71.46/-3/-3/3/bullet_blue
+#71.93/-3/-3/3/bullet_blue
+#72.15/-3/-3/3/bullet_blue
+#72.53/-3/-3/3/bullet_blue
+#73.21/-3/-3/3/bullet_blue
+#73.52/-3/-3/3/bullet_blue
 # 기본 박자
-74.22/-3/-3/3/bullet_blue
-74.67/-3/-3/3/bullet_blue
-74.89/-3/-3/3/bullet_blue
-75.23/-3/-3/3/bullet_blue
-75.91/-3/-3/3/bullet_blue
-76.25/-3/-3/3/bullet_blue
+#74.22/-3/-3/3/bullet_blue
+#74.67/-3/-3/3/bullet_blue
+#74.89/-3/-3/3/bullet_blue
+#75.23/-3/-3/3/bullet_blue
+#75.91/-3/-3/3/bullet_blue
+#76.25/-3/-3/3/bullet_blue
 # 기본 박자
-76.95/-3/-3/3/bullet_blue
-77.48/-3/-3/3/bullet_blue
-77.69/-3/-3/3/bullet_blue
-78.01/-3/-3/3/bullet_blue
-78.79/-3/-3/3/bullet_blue
-79.11/-3/-3/3/bullet_blue
+#76.95/-3/-3/3/bullet_blue
+#77.48/-3/-3/3/bullet_blue
+#77.69/-3/-3/3/bullet_blue
+#78.01/-3/-3/3/bullet_blue
+#78.79/-3/-3/3/bullet_blue
+#79.11/-3/-3/3/bullet_blue
 # 기본 박자
-79.78/-3/-3/3/bullet_blue
-80.32/-3/-3/3/bullet_blue
-80.51/-3/-3/3/bullet_blue
-80.80/-3/-3/3/bullet_blue
-81.54/-3/-3/3/bullet_blue
-81.86/-3/-3/3/bullet_blue
+#79.78/-3/-3/3/bullet_blue
+#80.32/-3/-3/3/bullet_blue
+#80.51/-3/-3/3/bullet_blue
+#80.80/-3/-3/3/bullet_blue
+#81.54/-3/-3/3/bullet_blue
+#81.86/-3/-3/3/bullet_blue
 # 기본 박자 # 박수
-82.55/-3/-3/3/bullet_blue
-83.06/-3/-3/3/bullet_blue
-83.26/-3/-3/3/bullet_blue
-83.60/-3/-3/3/bullet_blue
-84.30/-3/-3/3/bullet_blue
-84.62/-3/-3/3/bullet_blue
+#82.55/-3/-3/3/bullet_blue
+#83.06/-3/-3/3/bullet_blue
+#83.26/-3/-3/3/bullet_blue
+#83.60/-3/-3/3/bullet_blue
+#84.30/-3/-3/3/bullet_blue
+#84.62/-3/-3/3/bullet_blue
 # 기본 박자
-85.37/-3/-3/3/bullet_blue
-85.86/-3/-3/3/bullet_blue
-86.04/-3/-3/3/bullet_blue
-86.34/-3/-3/3/bullet_blue
-87.10/-3/-3/3/bullet_blue
-87.44/-3/-3/3/bullet_blue
+#85.37/-3/-3/3/bullet_blue
+#85.86/-3/-3/3/bullet_blue
+#86.04/-3/-3/3/bullet_blue
+#86.34/-3/-3/3/bullet_blue
+#87.10/-3/-3/3/bullet_blue
+#87.44/-3/-3/3/bullet_blue
 # 기본 박자
-88.13/-3/-3/3/bullet_blue
-88.63/-3/-3/3/bullet_blue
-88.81/-3/-3/3/bullet_blue
-89.15/-3/-3/3/bullet_blue
-89.90/-3/-3/3/bullet_blue
-90.22/-3/-3/3/bullet_blue
+#88.13/-3/-3/3/bullet_blue
+#88.63/-3/-3/3/bullet_blue
+#88.81/-3/-3/3/bullet_blue
+#89.15/-3/-3/3/bullet_blue
+#89.90/-3/-3/3/bullet_blue
+#90.22/-3/-3/3/bullet_blue
 # 기본 박자
 90.93/-3/-3/3/bullet_blue
 91.45/-3/-3/3/bullet_blue

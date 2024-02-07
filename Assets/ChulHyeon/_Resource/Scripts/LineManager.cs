@@ -10,9 +10,11 @@ public class LineManager : MonoBehaviour
 
     public float curTime = 0f;
 
+    public float startTime;
+    public float endTime;
+    float elapsedTime = 0f;
     void Start()
     {
-        line.gameObject.SetActive(false);
         
     }
 
@@ -20,12 +22,15 @@ public class LineManager : MonoBehaviour
     void Update()
     {
         curTime = bgm.curTime;
-        if(curTime >= 69.46)
+        if(curTime >= startTime)
 		{
-            line.gameObject.SetActive(true);
+            elapsedTime += Time.deltaTime;
+
+            float t = elapsedTime / 1f;
+            line.transform.localScale = Vector3.Lerp(line.transform.localScale, new Vector3(0.55f,0.55f,0), t);
             player.rythmMode = true;
         }
-        if (curTime >= 82)
+        if (curTime >= endTime)
         {
             line.gameObject.SetActive(false);
             player.rythmMode = false;
