@@ -4711,6 +4711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 1306578193}
+  backgroundSound: {fileID: 0}
 --- !u!4 &1272935370
 Transform:
   m_ObjectHideFlags: 0
@@ -8610,11 +8611,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8359730187770962995, guid: 096bf47d2f37ae74781cb30950bccdc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 5.08
       objectReference: {fileID: 0}
     - target: {fileID: 8359730187770962995, guid: 096bf47d2f37ae74781cb30950bccdc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 8359730187770962995, guid: 096bf47d2f37ae74781cb30950bccdc1, type: 3}
       propertyPath: m_LocalPosition.z
