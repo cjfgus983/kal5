@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ChulHyeon/_Scenes/MainPage.unity
-    guid: 9edff6746de925b42985ddde29927d57
+    path: Assets/Scenes/Lobby.unity
+    guid: 716fb0cb1da3dfb46b2775f43dfcdefd
   - enabled: 1
-    path: Assets/ChulHyeon/_Scenes/Ruben1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Stage1.unity
+    guid: 7778bd45d7b99184bb4f2e0ba02952e5
   - enabled: 1
-    path: Assets/ChulHyeon/_Scenes/Tutorial.unity
-    guid: 32d1fd1435831f644bb76b8cbfc0f3fc
+    path: Assets/Scenes/Stage2.unity
+    guid: 203bf71b156003e458c1b45ea3f98504
+  - enabled: 1
+    path: Assets/Scenes/Stage3.unity
+    guid: 31602d911ca369c48bd4dd5bcbfae62b
   m_configObjects: {}
