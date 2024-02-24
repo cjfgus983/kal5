@@ -11,6 +11,7 @@ public class CircleBullet : PatternData
 
     public int roundNumA = 20;
     public int roundNumB = 15;
+    public int roundNum = 10;
 
     private int remain;
     protected override void Start()
@@ -28,7 +29,8 @@ public class CircleBullet : PatternData
 	void Fire()
 	{
         int cnt = count;
-        int roundNum = cnt % 2 == 0 ? roundNumA : roundNumB;
+        //int roundNum = cnt % 2 == 0 ? roundNumA : roundNumB;
+
 
         for (int i = 0; i < roundNum; i++)
         {

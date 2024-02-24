@@ -54,7 +54,7 @@ public class Arrow : PatternData
 
         if (collision.tag == "Player")
 		{
-            Destroy(transform);
+            Destroy(transform.gameObject);
 		}
     }
 }
