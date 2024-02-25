@@ -27,4 +27,14 @@ public class StageSelectButton : MonoBehaviour
     {
         SceneManager.LoadScene(LobbyManager.GetComponent<LobbyManager>().sceneList[LobbyManager.GetComponent<LobbyManager>().stageNum - 1]);
     }
+
+    public void OnLeftArrowClick()
+    {
+        LobbyManager.GetComponent<LobbyManager>().stageNum--;
+    }
+
+    public void OnRightArrowClick()
+    {
+        LobbyManager.GetComponent<LobbyManager>().stageNum++;
+    }
 }
