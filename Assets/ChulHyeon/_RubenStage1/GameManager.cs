@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int bpm = 0;
     double currentTime = 0d;
     public GameObject gameOverSet;
-    public GameObject hpBar;
+    public GameObject player;
     public AudioSource bgm;
 
     //오브젝트 풀링을 위한 오브젝트
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if(hpBar.GetComponent<HPBar>().curHP<=0)
+        if(player.GetComponent<PlayerController>().hp<=0)
 		{
             GameOver();
 
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
 	{
         gameOverSet.SetActive(true);
+        Time.timeScale = 0f;
         GameStop();
     }
     void GameStop()
