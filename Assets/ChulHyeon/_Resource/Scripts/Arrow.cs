@@ -22,7 +22,7 @@ public class Arrow : PatternData
             {
                 transform.rotation = Quaternion.Euler(0, 0, 90);
             }
-            if (transform.position.x > 3) //아래
+            if (transform.position.y < -3) //아래
             {
                 transform.rotation = Quaternion.Euler(0, 0, 270);
             }
@@ -41,5 +41,20 @@ public class Arrow : PatternData
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
     }
 
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        if (collision.tag == "change Border")   
+        {
+            // 현재 스크립트가 적용된 객체의 SpriteRenderer를 가져옵니다.
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
+            // 객체의 색을 (255, 0, 0)으로 설정합니다.
+            spriteRenderer.color = new Color(1f, 0f, 0f);
+        }
+
+        if (collision.tag == "Player")
+		{
+            Destroy(transform.gameObject);
+		}
+    }
 }

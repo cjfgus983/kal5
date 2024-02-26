@@ -9,6 +9,10 @@ public class CircleBullet : PatternData
     public int count = 3; // 몇 번 발사할지
     public float interval = 0.7f; // 발사간의 간격
 
+    public int roundNumA = 20;
+    public int roundNumB = 15;
+    public int roundNum = 10;
+
     private int remain;
     protected override void Start()
     {
@@ -24,10 +28,9 @@ public class CircleBullet : PatternData
 
 	void Fire()
 	{
-        int roundNumA = 50;
-        int roundNumB = 40;
         int cnt = count;
-        int roundNum = cnt % 2 == 0 ? roundNumA : roundNumB;
+        //int roundNum = cnt % 2 == 0 ? roundNumA : roundNumB;
+
 
         for (int i = 0; i < roundNum; i++)
         {

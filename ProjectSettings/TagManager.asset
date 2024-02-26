@@ -11,6 +11,7 @@ TagManager:
   - Counter
   - Pattern
   - sheild
+  - change Border
   layers:
   - Default
   - TransparentFX
