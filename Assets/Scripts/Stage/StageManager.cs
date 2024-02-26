@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class StageManager : MonoBehaviour
 {
     public GameObject pm;
+    public GameObject player;
+    public GameObject gameOverUI;
+
+    public string stageName;
 
     public AudioSource backgroundSound;
     private void Awake()
@@ -20,7 +26,7 @@ public class StageManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GameOver();
     }
 
     void StartMusic()
@@ -30,8 +36,8 @@ public class StageManager : MonoBehaviour
 
     IEnumerator StageStart()
     {
-        yield return new WaitForSeconds(3.0f);
         pm.GetComponent<PatternManager>().PatternStart();
+        yield return new WaitForSeconds(3.0f);
         StartMusic();
     }
 
@@ -41,5 +47,21 @@ public class StageManager : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
         }
+    }
+
+    void GameOver()
+    {
+        if (player.GetComponent<PlayerController>().hp <= 0)
+        {
+            gameOverUI.SetActive(true);
+            player.GetComponent<PlayerController>().canMove = false;
+            backgroundSound.Pause();
+            pm.SetActive(false);
+        }
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(stageName);
     }
 }

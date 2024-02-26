@@ -20,6 +20,7 @@ public class BorderPattern : PatternData
         border = GameObject.Find("Border").GetComponent<BoxCollider2D>();
         borderNorm = border.size;
         StartCoroutine(Contraction());
+        
     }
 
     // Update is called once per frame
@@ -27,14 +28,17 @@ public class BorderPattern : PatternData
     {
         base.Update();
         timer += Time.deltaTime;
+        player.GetComponent<PlayerController>().canMove = false;
         if (timer + 0.5f >= patDur)
         {
             StartCoroutine(Expansion());
+            player.GetComponent<PlayerController>().canMove = true;
         }
     }
 
     IEnumerator Contraction()
     {
+        
         for (int i=0;i<10;i++)
         {
             transform.localScale = new Vector3(transform.localScale.x - lossVolume/10f,
@@ -49,6 +53,7 @@ public class BorderPattern : PatternData
     }
     IEnumerator Expansion()
     {
+        
         for (int i = 0; i < 10; i++)
         {
             transform.localScale = new Vector3(transform.localScale.x + lossVolume / 10f,

@@ -34,6 +34,7 @@ public class BorderPattern2 : PatternData
         if (i<lossTiming.Count && timer + 0.5f >= lossTiming[i])
         {
             StartCoroutine(Contraction());
+            player.GetComponent<PlayerController>().canMove = false;
             i++;
         }
         else if (i>=lossTiming.Count && setZero)
@@ -44,6 +45,7 @@ public class BorderPattern2 : PatternData
         if (j < gainTiming.Count && timer + 0.5f >= gainTiming[j])
         {
             StartCoroutine(Expansion());
+            player.GetComponent<PlayerController>().canMove = true;
             j++;
         }
     }
