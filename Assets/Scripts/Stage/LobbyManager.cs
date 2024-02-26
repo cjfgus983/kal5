@@ -8,16 +8,14 @@ using UnityEngine;
 public class LobbyManager : MonoBehaviour
 {
     public List<string> sceneList = new List<string>();
-    public List<GameObject> stageUI = new List<GameObject>();
-    public List<GameObject> fieldList = new List<GameObject>();
-    public GameObject player;
+    public List<GameObject> musicList = new List<GameObject>();
+    public GameObject easyButton;
+    public GameObject hareButton;
     public int stageNum;
-    bool stageSelect;
     bool canSelect;
     // Start is called before the first frame update
     void Start()
     {
-        stageSelect = false;
         canSelect = true;
         stageNum = 0;
     }
@@ -27,56 +25,56 @@ public class LobbyManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (stageSelect)
-            {
-                stageUI[stageNum - 1].SetActive(true);
-                canSelect = false;
-            }
+            canSelect = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (stageSelect)
-            {
-                stageUI[stageNum - 1].SetActive(false);
-                canSelect = true;
-            }
+            canSelect = true;
         }
+
         if (canSelect)
         {
             MoveInLobby();
         }
+
+        ChangeMusic(stageNum);
     }
 
     void MoveInLobby()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (stageNum > 0 && !stageSelect) stageNum--;
+            stageNum--;
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (stageNum < sceneList.Count && !stageSelect) stageNum++;
+            stageNum++;
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (stageNum < 0)
         {
-            if (stageNum != 0) stageSelect = true;
+            stageNum = sceneList.Count - 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (stageNum > sceneList.Count - 1)
         {
-            stageSelect = false;
+            stageNum = 0;
         }
 
-        if (stageSelect)
-        {
-            player.transform.position = fieldList[stageNum * 2 - 1].transform.position;
+    }
 
-        } else
+    void ChangeMusic(int num)
+    {
+        for (int i = 0; i < musicList.Count; i++)
         {
-            player.transform.position = fieldList[stageNum * 2].transform.position;
+            if (i == num)
+            {
+                musicList[i].SetActive(true);
+                continue;
+            }
+            musicList[i].SetActive(false);
         }
     }
 }
