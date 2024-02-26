@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour
     bool canHit;
     bool counterHit;
     public bool canMove;
+    Color playerColor;
     float vertical;
     float horizontal;
     public float counterCooltime;
 
+    SpriteRenderer spriteRenderer;
     public BoxCollider2D box;
     public BoxCollider2D border;
 
@@ -28,6 +30,8 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         vertical = 0;
         horizontal = 0;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        playerColor = spriteRenderer.color;
         border = GameObject.Find("Border").GetComponent<BoxCollider2D>();
     }
 
@@ -54,7 +58,7 @@ public class PlayerController : MonoBehaviour
             if (counterHit)
             {
                 counterHit = false;
-                hp--;
+                Damage();
             }
         }
     }
@@ -79,7 +83,7 @@ public class PlayerController : MonoBehaviour
         transform.position += inputkey.normalized * moveSpeed * Time.deltaTime;
     }
 
-    void Damage()
+    public void Damage()
     {
         if (canHit)
         {
@@ -123,7 +127,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Hit()
     {
+        Color hitColor = new Color(playerColor.r, playerColor.g, playerColor.b, 0.4f);
+        spriteRenderer.color = hitColor;
         yield return new WaitForSeconds(1.0f);
+        spriteRenderer.color = playerColor;
         canHit = true;
     }
 

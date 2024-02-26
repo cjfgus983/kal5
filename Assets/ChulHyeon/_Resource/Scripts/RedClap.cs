@@ -28,10 +28,10 @@ public class RedClap : PatternData
         currentColor.a = 0.3f;
         objectRenderer.material.color = currentColor;
 
-        float randomX = Random.Range(-8f, 8f);
-        float fixedY = Random.Range(-4f, 4f);
-        randomPos = new Vector2(randomX, fixedY);
-        transform.position = randomPos;
+        //float randomX = Random.Range(-8f, 8f);
+        //float fixedY = Random.Range(-4f, 4f);
+        //randomPos = new Vector2(randomX, fixedY);
+        //transform.position = randomPos;
 
         InvokeRepeating("ToggleAlpha", 0f, blinkInterval);
     }
