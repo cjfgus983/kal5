@@ -47566,6 +47566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 1281732982}
+  backgroundSound: {fileID: 0}
 --- !u!61 &1086303361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55812,6 +55813,7 @@ MonoBehaviour:
   patDuration: 0
   patRot: 0
   pattern: {fileID: 4024326565044159440, guid: 738793d0e74a5b34dacf56a30d508299, type: 3}
+  textFile: {fileID: 0}
 --- !u!4 &1281732984
 Transform:
   m_ObjectHideFlags: 0
@@ -70915,9 +70917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5f730280a15c9438ff8706c5e254d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1633239432}
-  isPaused: 0
-  bgm: {fileID: 89159798}
 --- !u!114 &1690152166
 MonoBehaviour:
   m_ObjectHideFlags: 0

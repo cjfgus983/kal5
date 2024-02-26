@@ -4819,7 +4819,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.23584908, g: 0.027812388, b: 0.027812388, a: 1}
   m_FlipX: 0
@@ -8334,7 +8334,7 @@ MonoBehaviour:
   - {fileID: 747101767}
   bpm: 118
   gameOverSet: {fileID: 1537428269}
-  hpBar: {fileID: 1501316198}
+  player: {fileID: 0}
   bgm: {fileID: 1323119662}
 --- !u!1 &1461328343
 GameObject:
@@ -8538,6 +8538,10 @@ PrefabInstance:
     - target: {fileID: 7278595378380972929, guid: 94471cea1446b4144bc3984339bd0bb6, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278595378380972929, guid: 94471cea1446b4144bc3984339bd0bb6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
