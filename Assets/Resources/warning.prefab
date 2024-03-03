@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0026966345, z: -0, w: 0.99999636}
   m_LocalPosition: {x: -2.8673034, y: -0.09, z: 0.9999927}
-  m_LocalScale: {x: 1.2673103, y: 8.025069, z: 1}
+  m_LocalScale: {x: 2, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,5 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4217c36ef238c2f419f641085ebcfd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patStartTime: 0
+  patDuration: 0
+  patRot: 0
+  patRotAng: 0
+  patRotStartTime: 0
+  patRotTime: 0
   danger: {fileID: 3634391720108984601, guid: 3fc293fc8769aa141818e42994b5a2ee, type: 3}
   longRed: {fileID: 7007034709391974975, guid: 2ed39ddbbe1214a418f49b070a92fd31, type: 3}
+  player: {fileID: 0}

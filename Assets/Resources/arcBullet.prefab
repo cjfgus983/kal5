@@ -51,5 +51,5 @@ MonoBehaviour:
   patRotStartTime: 0
   patRotTime: 0
   bullet: {fileID: 5488628324665803771, guid: 6bb41b4675c7e5c458acc8e9b42228f9, type: 3}
-  maxShoot: 100
+  maxShoot: 151
   dir: 2

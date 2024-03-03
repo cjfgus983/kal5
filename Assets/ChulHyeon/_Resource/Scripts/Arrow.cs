@@ -52,9 +52,10 @@ public class Arrow : PatternData
             spriteRenderer.color = new Color(1f, 0f, 0f);
         }
 
-        if (collision.tag == "Player")
-		{
-            Destroy(transform.gameObject);
-		}
+  //      if (collision.tag == "Player")
+		//{
+
+  //          Destroy(transform.gameObject);
+		//}
     }
 }

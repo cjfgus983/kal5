@@ -20,7 +20,8 @@ public class StageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StageStart());
+        //StartCoroutine(StageStart());
+        pm.GetComponent<PatternManager>().PatternStart();
     }
 
     // Update is called once per frame

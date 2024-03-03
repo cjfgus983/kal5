@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public bool isGenerate = true;
     public Transform[] spawnPoints;//장애물 소환 위치
     public int bpm = 0;
-    double currentTime = 0d;
+    //double currentTime = 0d;
     public GameObject gameOverSet;
     public GameObject player;
 
@@ -27,28 +27,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void SpawnWarn()
-	{
-		//기존 소환 방법 (루벤 한정 경고표시)
-		if (isGenerate)
-		{
-            if(SceneManager.GetActiveScene().name == "Ruben1")
-			{
-                int ranPoint = Random.Range(0, 7);
-                Instantiate(warnObject, spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);//기존 소환 방법
-            }
-
-
-		}
-
-		//오브젝트 풀링
-		//if (isGenerate)
-		//{
-		//	int ranPoint = Random.Range(0, 7);
-		//	GameObject warn = objectManager.MakeObj("warningObject");
-		//	warn.transform.position = spawnPoints[ranPoint].position;
-		//}
-	}
 
     public void GameOver()
 	{
