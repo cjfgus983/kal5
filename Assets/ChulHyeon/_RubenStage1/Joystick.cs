@@ -26,7 +26,7 @@ public class Joystick : MonoBehaviour
 			stick.localPosition = Vector2.ClampMagnitude(vec, limit); //어떤 값을 얼마만큼 제한할것인지 
 
 			Vector3 dir = (stick.position - backCircle.position).normalized;
-			player.transform.position += dir * player.GetComponent<Player>().speed * Time.deltaTime;
+			/*player.transform.position += dir * player.GetComponent<Player>().speed * Time.deltaTime;*/
 
 			//드래그 끝나면
 			if (Input.GetMouseButtonUp(0))

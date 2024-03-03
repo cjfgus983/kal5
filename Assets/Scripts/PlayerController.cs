@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         horizontal = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerColor = spriteRenderer.color;
+        box = GetComponent<BoxCollider2D>();
         border = GameObject.Find("Border").GetComponent<BoxCollider2D>();
     }
 
@@ -134,9 +135,9 @@ public class PlayerController : MonoBehaviour
         canHit = true;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Pattern" || collision.gameObject.tag == "bullet")
+        if (collision.gameObject.tag == "Pattern" || collision.gameObject.tag == "Bullet")
         {
             Damage();
         }

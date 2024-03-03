@@ -8,18 +8,13 @@ using UnityEditor;
 
 using UnityEngine;
 
-public class PatternManager_Ch : MonoBehaviour
+public class PatternManager_Ch : PatternManager
 {
-
-    public List<GameObject> patList = new List<GameObject>();
-
-    public GameObject patternManager;
-
     PatternData pd;
 
     public TextAsset textFile;
 
-	private void Awake()
+    void Awake()
 	{
         StringReader reader = new StringReader(textFile.text);
 
@@ -103,11 +98,6 @@ public class PatternManager_Ch : MonoBehaviour
         reader.Close();
     }
 
-	void Start()
-    {
-        PatternStart();
-    }
-
     void Update()
     {
 
@@ -129,14 +119,6 @@ public class PatternManager_Ch : MonoBehaviour
             }
         }
 
-    }
-
-    public void PatternStart()
-    {
-        for (int i = 0; i < patList.Count; i++)
-        {
-            StartCoroutine(StartPattern(patList[i].GetComponent<PatternData>().patStartTime, patList[i]));
-        }
     }
 
     IEnumerator StartPattern(float startTime, GameObject pattern)

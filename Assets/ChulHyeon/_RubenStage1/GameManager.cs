@@ -13,22 +13,12 @@ public class GameManager : MonoBehaviour
     double currentTime = 0d;
     public GameObject gameOverSet;
     public GameObject player;
-    public AudioSource bgm;
 
     //오브젝트 풀링을 위한 오브젝트
 
     
     void Update()
     {
-        if (bgm.enabled == true)
-        {
-            currentTime += Time.deltaTime;
-            if (currentTime >= 60d / bpm)
-            {
-                SpawnWarn();
-                currentTime -= 60d / bpm;
-            }
-        }
 
         if(player.GetComponent<PlayerController>().hp<=0)
 		{
@@ -68,12 +58,11 @@ public class GameManager : MonoBehaviour
     }
     void GameStop()
 	{
-        bgm.enabled = false;
         isGenerate = false;
     }
 
     void GameRetry()
 	{
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Stage3");
 	}
 }

@@ -18,14 +18,19 @@ public class StageSelectButton : MonoBehaviour
         
     }
 
+    public void OnStartButtonClick()
+    {
+        LobbyManager.GetComponent<LobbyManager>().StartButton();
+    }
+
     public void OnEasyButtonClick()
     {
-        SceneManager.LoadScene(LobbyManager.GetComponent<LobbyManager>().sceneList[LobbyManager.GetComponent<LobbyManager>().stageNum-1]);
+        SceneManager.LoadScene(LobbyManager.GetComponent<LobbyManager>().sceneList[LobbyManager.GetComponent<LobbyManager>().stageNum]);
     }
 
     public void OnHardButtonClick()
     {
-        SceneManager.LoadScene(LobbyManager.GetComponent<LobbyManager>().sceneList[LobbyManager.GetComponent<LobbyManager>().stageNum - 1]);
+        SceneManager.LoadScene(LobbyManager.GetComponent<LobbyManager>().sceneList[LobbyManager.GetComponent<LobbyManager>().stageNum]);
     }
 
     public void OnLeftArrowClick()

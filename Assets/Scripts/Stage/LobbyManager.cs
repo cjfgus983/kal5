@@ -9,8 +9,9 @@ public class LobbyManager : MonoBehaviour
 {
     public List<string> sceneList = new List<string>();
     public List<GameObject> musicList = new List<GameObject>();
+    public GameObject startButton;
     public GameObject easyButton;
-    public GameObject hareButton;
+    public GameObject hardButton;
     public int stageNum;
     bool canSelect;
     // Start is called before the first frame update
@@ -25,23 +26,26 @@ public class LobbyManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            canSelect = false;
+            StartButton();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             canSelect = true;
+            startButton.SetActive(true);
+            easyButton.SetActive(false);
+            hardButton.SetActive(false);
         }
 
         if (canSelect)
         {
-            MoveInLobby();
+            SelectInLobby();
         }
 
         ChangeMusic(stageNum);
     }
 
-    void MoveInLobby()
+    void SelectInLobby()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -65,6 +69,11 @@ public class LobbyManager : MonoBehaviour
 
     }
 
+    void SelectDifficulty()
+    {
+
+    }
+
     void ChangeMusic(int num)
     {
         for (int i = 0; i < musicList.Count; i++)
@@ -76,5 +85,13 @@ public class LobbyManager : MonoBehaviour
             }
             musicList[i].SetActive(false);
         }
+    }
+
+    public void StartButton()
+    {
+        canSelect = false;
+        startButton.SetActive(false);
+        easyButton.SetActive(true);
+        hardButton.SetActive(true);
     }
 }

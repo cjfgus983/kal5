@@ -33,35 +33,8 @@ public class PatternManager : MonoBehaviour
 
     PatternData pd;
 
-
-    public TextAsset textFile;
-
-    void Start()
-    {
-        if (textFile != null)
-        {
-            StringReader reader = new StringReader(textFile.text);
-
-            while (true)
-            {
-                string line = reader.ReadLine();
-
-                if (line == null)
-                    break;
-
-                Debug.Log("Line: " + line);
-            }
-
-            reader.Close();
-        }
-        else
-        {
-            Debug.LogError("Text file not assigned!");
-        }
-    }
-
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (patternManager == null)
         {
@@ -90,9 +63,12 @@ public class PatternManager : MonoBehaviour
 
     public void PatternStart()
     {
-        for (int i = 0; i < patList.Count; i++)
+        if (patList.Count > 0)
         {
-            StartCoroutine(StartPattern(patList[i].GetComponent<PatternData>().patStartTime, patList[i]));
+            for (int i = 0; i < patList.Count; i++)
+            {
+                StartCoroutine(StartPattern(patList[i].GetComponent<PatternData>().patStartTime, patList[i]));
+            }
         }
     }
 
