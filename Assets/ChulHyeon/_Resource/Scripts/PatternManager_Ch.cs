@@ -98,7 +98,7 @@ public class PatternManager_Ch : PatternManager
         reader.Close();
     }
 
-    void Update()
+    protected override void Update()
     {
 
         for (int i = patList.Count - 1; i > -1; i--)
