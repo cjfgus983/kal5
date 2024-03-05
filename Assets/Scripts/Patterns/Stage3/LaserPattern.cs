@@ -9,6 +9,8 @@ public class LaserPattern : PatternData
     public GameObject child1;
     public GameObject child2;
     public GameObject child3;
+    SpriteRenderer child2sr;
+    Color squareColor;
     public float aimDuration;
     public float bulletTiming;
     private float aimTimer=0f;
@@ -18,6 +20,8 @@ public class LaserPattern : PatternData
     protected override void Start()
     {
         base.Start();
+        child2sr=transform.GetChild(1).GetComponent<SpriteRenderer>();
+        squareColor = child2sr.color;
         trans = GetComponent<Transform>();
         player = GameObject.Find("Player");
         if (isVert)
@@ -37,6 +41,7 @@ public class LaserPattern : PatternData
             else
                 AimHoriz();
             aimTimer += Time.deltaTime;
+            StartCoroutine(Fade());
             if (aimTimer >= aimDuration)
             {
                 isAiming = false;
@@ -54,8 +59,18 @@ public class LaserPattern : PatternData
     {
         trans.position = new Vector2(player.transform.position.x, trans.position.y);
     }
-
-    IEnumerator FireBullet()
+    IEnumerator Fade()
+    {
+        float a;
+        float t = 255;
+        for (a = 40; a < t; a=a+5)
+        {
+            squareColor.a = a/t;
+            child2sr.color = squareColor;
+            yield return new WaitForSeconds(aimDuration/43f);
+        }
+    }
+IEnumerator FireBullet()
     {
         yield return new WaitForSeconds(0.5f);
         child1.SetActive(false);

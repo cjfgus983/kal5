@@ -9,7 +9,7 @@ public class Gradient : MonoBehaviour
     public float graTime1;
     float smoothness=0.02f;
     float duration = 2;
-    Color myBlue= new(58, 182, 202);
+    Color myBlue= new(16, 111, 181);
     public Camera cam;
 
     // Update is called once per frame
