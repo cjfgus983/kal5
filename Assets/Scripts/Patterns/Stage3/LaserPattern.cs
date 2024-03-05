@@ -9,6 +9,8 @@ public class LaserPattern : PatternData
     public GameObject child1;
     public GameObject child2;
     public GameObject child3;
+    SpriteRenderer child2color;
+    float a, t;
     public float aimDuration;
     public float bulletTiming;
     private float aimTimer=0f;
@@ -19,6 +21,7 @@ public class LaserPattern : PatternData
     {
         base.Start();
         trans = GetComponent<Transform>();
+        child2color = child2.GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player");
         if (isVert)
             AimVert();
@@ -57,10 +60,15 @@ public class LaserPattern : PatternData
 
     IEnumerator FireBullet()
     {
-        yield return new WaitForSeconds(0.5f);
+        t = 255;
+        for (a = 60; a < t; a=a+3)
+        {
+            child2color.color = new Color(255, 0, 0, a==t? a % t : 1);
+            yield return new WaitForSeconds(0.01f);
+        }
         child1.SetActive(false);
         child2.SetActive(false);
-        yield return new WaitForSeconds(bulletTiming-0.5f);
+        yield return new WaitForSeconds(bulletTiming-0.65f);
         child3.SetActive(true);
     }
     
