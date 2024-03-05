@@ -32,7 +32,7 @@ public class StageManager : MonoBehaviour
 
     void StartMusic()
     {
-        backgroundSound.Play();
+        backgroundSound.enabled = true;
     }
 
     IEnumerator StageStart()
@@ -56,7 +56,7 @@ public class StageManager : MonoBehaviour
         {
             gameOverUI.SetActive(true);
             player.GetComponent<PlayerController>().canMove = false;
-            backgroundSound.Pause();
+            backgroundSound.enabled = false;
             pm.SetActive(false);
         }
     }
