@@ -61,15 +61,14 @@ public class LaserPattern : PatternData
     IEnumerator FireBullet()
     {
         t = 255;
-        for (a = 60; a < t; a++)
+        for (a = 60; a < t; a=a+3)
         {
-            child2color.color = new Color(255, 0, 0, a / t);
-            yield return new WaitForSeconds(aimDuration/195f);
+            child2color.color = new Color(255, 0, 0, a==t? a % t : 1);
+            yield return new WaitForSeconds(0.01f);
         }
-        yield return new WaitForSeconds(0.5f);
         child1.SetActive(false);
         child2.SetActive(false);
-        yield return new WaitForSeconds(bulletTiming-0.5f);
+        yield return new WaitForSeconds(bulletTiming-0.65f);
         child3.SetActive(true);
     }
     
