@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
                 sheild.transform.rotation = Quaternion.Euler(0, 0, 90);
             }
         }
+		else { sheild.SetActive(false); }
     }
 
 	private void OnTriggerStay2D(Collider2D collision)

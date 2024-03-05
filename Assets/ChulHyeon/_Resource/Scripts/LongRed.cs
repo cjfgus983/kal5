@@ -16,6 +16,6 @@ public class LongRed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigid.velocity = transform.up * 2;
+        rigid.velocity = transform.up * 3;
     }
 }

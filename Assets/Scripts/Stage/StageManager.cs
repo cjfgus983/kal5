@@ -20,7 +20,8 @@ public class StageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StageStart());
+        //StartCoroutine(StageStart());
+        pm.GetComponent<PatternManager>().PatternStart();
     }
 
     // Update is called once per frame
@@ -31,7 +32,7 @@ public class StageManager : MonoBehaviour
 
     void StartMusic()
     {
-        backgroundSound.enabled = true;
+        backgroundSound.Play();
     }
 
     IEnumerator StageStart()
@@ -55,7 +56,7 @@ public class StageManager : MonoBehaviour
         {
             gameOverUI.SetActive(true);
             player.GetComponent<PlayerController>().canMove = false;
-            backgroundSound.enabled = false;
+            backgroundSound.Pause();
             pm.SetActive(false);
         }
     }

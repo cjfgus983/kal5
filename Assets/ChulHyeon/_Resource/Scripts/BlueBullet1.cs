@@ -28,8 +28,8 @@ public class BlueBullet1 : PatternData
 
     void SetRandomPosition()
     {
-        float randomX = Random.Range(-8f, 8f);
-        float fixedY = 5f;
+        float randomX = Random.Range(-16.5f, 16.5f);
+        float fixedY = 7.5f;
         randomPos = new Vector2(randomX, fixedY);
         transform.position = randomPos;
     }

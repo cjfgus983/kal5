@@ -54,19 +54,22 @@ public class RedBullet : PatternData
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var speed = lastVelocity.magnitude; //속도의 크기만 받아옴
-        var dir = Vector2.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+        if(collision.gameObject.tag == "Border")
+		{
+            var speed = lastVelocity.magnitude; //속도의 크기만 받아옴
+            var dir = Vector2.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
 
-        rigid.velocity = dir * Mathf.Max(speed, 0f);
+            rigid.velocity = dir * Mathf.Max(speed, 0f);
 
-        // 기존 오브젝트 삭제
-        Destroy(gameObject);
+            // 기존 오브젝트 삭제
+            Destroy(gameObject);
 
-        // 새로운 프리펩 생성 및 위치 설정
-        GameObject newPrefab = Instantiate(yellowBulletPrefab, transform.position, Quaternion.identity);
+            // 새로운 프리펩 생성 및 위치 설정
+            GameObject newPrefab = Instantiate(yellowBulletPrefab, transform.position, Quaternion.identity);
 
-        // 반사 방향을 유지하기 위해 새로운 프리펩에 반사된 방향을 설정
-        newPrefab.GetComponent<Rigidbody2D>().velocity = dir * speed;
+            // 반사 방향을 유지하기 위해 새로운 프리펩에 반사된 방향을 설정
+            newPrefab.GetComponent<Rigidbody2D>().velocity = dir * speed;
+        }
     }
 
 }

@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.99, y: 1.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -201,6 +201,6 @@ MonoBehaviour:
   patRotTime: 0
   player: {fileID: 0}
   prefabToShoot: {fileID: 7561406026144113745, guid: 0011bbce95252e24b81f9da78ce25d22, type: 3}
-  speed: 5
+  speed: 8
   rotationSpeed: 300
   stopAndStayTime: 1

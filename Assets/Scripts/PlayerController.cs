@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D box;
     public BoxCollider2D border;
 
+    public Player script_player;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(script_player != null)
+		{
+            if(script_player.rythmMode == true)
+			{
+                canMove = false;
+			}
+            else
+                canMove = true;
+        }
+
         if (canMove)
         {
             Move();
@@ -137,7 +148,12 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Pattern" || collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(collision.transform.gameObject);
+            Damage();
+        }
+        if (collision.gameObject.tag == "Pattern")
         {
             Damage();
         }

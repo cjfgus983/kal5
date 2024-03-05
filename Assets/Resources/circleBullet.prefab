@@ -55,3 +55,4 @@ MonoBehaviour:
   interval: 0.7
   roundNumA: 15
   roundNumB: 30
+  roundNum: 10

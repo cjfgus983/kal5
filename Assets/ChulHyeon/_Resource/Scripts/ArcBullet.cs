@@ -10,6 +10,7 @@ public class ArcBullet : PatternData
     [Tooltip("1:up 2:down 3:left 4:right")]
     public int dir = 2;
     float curTime = 0;
+    public int speed = 10;
     protected override void Start()
     {
         if (transform.position.x > 5)
@@ -49,7 +50,7 @@ public class ArcBullet : PatternData
 
         Rigidbody2D rigid = newBullet.GetComponent<Rigidbody2D>();
         Vector2 dirVec = new Vector2(Mathf.Sin(Mathf.PI * 11 * cnt / maxShoot), -1); // 아래로 쏘는거
-        rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
+        rigid.AddForce(dirVec.normalized * speed, ForceMode2D.Impulse);
 
         // 회전 적용
         float angle = Mathf.Atan2(dirVec.y, dirVec.x) * Mathf.Rad2Deg - 90;
@@ -67,7 +68,7 @@ public class ArcBullet : PatternData
 
         Rigidbody2D rigid = newBullet.GetComponent<Rigidbody2D>();
         Vector2 dirVec = new Vector2(-1, Mathf.Sin(Mathf.PI * 11 * cnt / maxShoot)); // 왼쪽
-        rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
+        rigid.AddForce(dirVec.normalized * speed, ForceMode2D.Impulse);
 
         // 회전 적용
         float angle = Mathf.Atan2(dirVec.y, dirVec.x) * Mathf.Rad2Deg - 90;
@@ -85,7 +86,7 @@ public class ArcBullet : PatternData
 
         Rigidbody2D rigid = newBullet.GetComponent<Rigidbody2D>();
         Vector2 dirVec = new Vector2(1, Mathf.Sin(Mathf.PI * 11 * cnt / maxShoot)); // 왼쪽
-        rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
+        rigid.AddForce(dirVec.normalized * speed, ForceMode2D.Impulse);
 
         // 회전 적용
         float angle = Mathf.Atan2(dirVec.y, dirVec.x) * Mathf.Rad2Deg - 90;
@@ -103,7 +104,7 @@ public class ArcBullet : PatternData
 
         Rigidbody2D rigid = newBullet.GetComponent<Rigidbody2D>();
         Vector2 dirVec = new Vector2(Mathf.Sin(Mathf.PI * 11 * cnt / maxShoot), 1); // 위로
-        rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
+        rigid.AddForce(dirVec.normalized * speed, ForceMode2D.Impulse);
 
         // 회전 적용
         float angle = Mathf.Atan2(dirVec.y, dirVec.x) * Mathf.Rad2Deg - 90;
