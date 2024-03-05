@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     {
         if(rythmMode) //리듬게임 모드 일 때
 		{
+            GetComponent<PlayerController>().canMove = false;
             if (!isInRythmMode)// 처음 진입할 때 위치 고정
             {
                 isInRythmMode = true;
