@@ -13,17 +13,5 @@ public class WaitMusic : MonoBehaviour
     {
         bgm = GetComponent<AudioSource>();
         bgm.enabled = false;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        curTime += Time.deltaTime;
-        if (curTime >= limitTime)
-		{
-            bgm.enabled = true;
-        }
-    }
-    
+    }  
 }
