@@ -40,16 +40,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(script_player != null)
-		{
-            if(script_player.rythmMode == true)
-			{
-                canMove = false;
-			}
-            else
-                canMove = true;
-        }
-
         if (canMove)
         {
             Move();
