@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedCircle : MonoBehaviour
+public class RedCircle : PatternData
 {
     public float moveSpeed = 2f;//꿈틀거리는 속도
     public float waitTime = .5f;
     private Rigidbody2D rigid;
 
     // Start is called before the first frame update
-    void Start()
+    override protected void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         StartCoroutine(DelayedStartCoroutine());

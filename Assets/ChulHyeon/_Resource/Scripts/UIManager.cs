@@ -7,6 +7,10 @@ public class UIManager : MonoBehaviour
 {
     public GameObject initialPanel; // UI 패널을 가리키는 변수
     public AudioSource backgroundMusic;
+
+    public GameObject pauseMenu;
+    public GameObject pauseButton;
+
     void Start()
     {
         initialPanel.SetActive(true);
@@ -22,6 +26,15 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1f;
             backgroundMusic.UnPause();
             gameObject.SetActive(false);
+        }
+
+        if (pauseMenu.activeSelf == true)
+		{
+            pauseButton.SetActive(false);
+		}
+        else
+		{
+            pauseButton.SetActive(true);
         }
 	}
 

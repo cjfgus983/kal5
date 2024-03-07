@@ -8,12 +8,14 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
 	public AudioSource backgroundMusic;
 
+
 	public void Pause()
 	{
 		pauseMenu.SetActive(true);
 		Time.timeScale = 0f;
 		backgroundMusic.Pause();
 		transform.gameObject.SetActive(false);
+
 	}
 
 	public void Resume()
