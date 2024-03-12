@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
 		Time.timeScale = 0f;
 		backgroundMusic.Pause();
 		transform.gameObject.SetActive(false);
+
 	}
 
 	public void Resume()
@@ -29,4 +30,5 @@ public class PauseMenu : MonoBehaviour
 		Time.timeScale = 1f;
 		SceneManager.LoadScene(sceneID);
 	}
+
 }

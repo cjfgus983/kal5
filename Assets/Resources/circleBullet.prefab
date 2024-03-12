@@ -50,9 +50,10 @@ MonoBehaviour:
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  bullet: {fileID: 4886491974964498681, guid: ccb7524d3e9665f47923695a34c5fcd2, type: 3}
+  bullet: {fileID: 4886491974964498681, guid: ce561bc5475dcf247aac419589d30d63, type: 3}
   count: 1
   interval: 0.7
   roundNumA: 15
   roundNumB: 30
   roundNum: 10
+  speed: 10

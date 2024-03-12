@@ -65,7 +65,9 @@ public class Content : MonoBehaviour
     public void Next()
     {
         if (index == transform.childCount -1)
-            return;
+		{
+            Close();
+		}
         else
         {
             index++;

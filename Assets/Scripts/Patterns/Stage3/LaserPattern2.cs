@@ -10,6 +10,8 @@ public class LaserPattern2 : PatternData
     public Transform child1;
     public Transform child2;
     public Transform child3;
+    public List<SpriteRenderer> squareColor = new List<SpriteRenderer>();
+    Color colorA = new Color(255, 0, 0, 0.235f), colorB = new Color(255, 0, 0, 1f);
     public List<GameObject> setFalseChild = new List<GameObject>();
     public List<GameObject> setTrueChild = new List<GameObject>();
     private bool isAiming = true;
@@ -32,7 +34,7 @@ public class LaserPattern2 : PatternData
             child1.rotation = Quaternion.LookRotation(Vector3.forward, targetPosition - child1.position);
             child2.rotation = Quaternion.LookRotation(Vector3.forward, targetPosition - child2.position);
             child3.rotation = Quaternion.LookRotation(Vector3.forward, targetPosition - child3.position);
-
+            StartCoroutine(Gradation());
             aimTimer += Time.deltaTime;
             if (aimTimer >= aimDuration)
             {
@@ -40,6 +42,12 @@ public class LaserPattern2 : PatternData
                 StartCoroutine(FireBullet());
             }
         }
+    }
+    IEnumerator Gradation()
+    {
+        for (int i=0;i<squareColor.Count;i++)
+            squareColor[i].color = Color.Lerp(colorA, colorB, aimTimer / aimDuration);
+        yield return null;
     }
     IEnumerator FireBullet()
     {
