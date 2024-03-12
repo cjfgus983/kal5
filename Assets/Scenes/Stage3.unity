@@ -48020,6 +48020,8 @@ MonoBehaviour:
   player: {fileID: 537645715}
   gameOverUI: {fileID: 1765577050}
   stageName: Stage3
+  progressBar: {fileID: 2039222880}
+  isClear: 0
   backgroundSound: {fileID: 89159798}
 --- !u!61 &1086303361
 BoxCollider2D:
@@ -89685,7 +89687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 89159798}
   progressBar: {fileID: 2039222881}
-  clearUI: {fileID: 0}
 --- !u!1 &2043721729
 GameObject:
   m_ObjectHideFlags: 0

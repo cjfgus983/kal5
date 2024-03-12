@@ -79,7 +79,7 @@ public class LobbyManager : MonoBehaviour
     {
         for (int i = 0; i < musicList.Count; i++)
         {
-            /*musicList[i].GetComponent<RectTransform>().LeanMoveLocal(new Vector3(-1000 + 1000 * stageNum, 0, 0));*/
+            
         }
     }
 

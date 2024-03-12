@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 
 public class StageManager : MonoBehaviour
@@ -38,6 +38,7 @@ public class StageManager : MonoBehaviour
     void StartMusic()
     {
         backgroundSound.enabled = true;
+        StartCoroutine(ClearStage(backgroundSound.clip.length));
     }
 
     IEnumerator StageStart()
@@ -45,7 +46,7 @@ public class StageManager : MonoBehaviour
         pm.GetComponent<PatternManager>().PatternStart();
         yield return new WaitForSeconds(3.0f);
         StartMusic();
-        ClearStage(backgroundSound.clip.length);
+        
     }
 
     void OnTriggerExit2D(Collider2D collision)
