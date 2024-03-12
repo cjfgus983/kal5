@@ -32,6 +32,7 @@ public class StageManager : MonoBehaviour
     void Update()
     {
         GameOver();
+        ProgressBar();
     }
 
     void StartMusic()
