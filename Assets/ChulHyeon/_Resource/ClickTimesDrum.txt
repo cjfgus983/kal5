@@ -245,34 +245,34 @@
 # 기본 박자
 #96.51/-3/-3/3/bullet_blue
 #97.03/-3/-3/3/bullet_blue
-96.27/-8/-4/3/PurpleBullet
-96.27/8/-4/3/PurpleBullet
+96.27/-17.5/-10/3/PurpleBullet
+96.27/17.5/-10/3/PurpleBullet
 #97.55/-3/-3/3/bullet_blue
 #98.26/-3/-3/3/bullet_blue
-97.65/8/4/3/PurpleBullet
-97.65/-8/4/3/PurpleBullet
+97.65/17.5/10/3/PurpleBullet
+97.65/-17.5/10/3/PurpleBullet
 # 기본 박자
 #99.27/-3/-3/3/bullet_blue
 #99.82/-3/-3/3/bullet_blue
-99.07/-8/-4/3/PurpleBullet
-99.07/8/-4/3/PurpleBullet
+99.07/-17.5/-10/3/PurpleBullet
+99.07/17.5/-10/3/PurpleBullet
 #100.34/-3/-3/3/bullet_blue
 #101.05/-3/-3/3/bullet_blue
-100.41/-8/4/3/PurpleBullet
-100.41/8/4/3/PurpleBullet
+100.41/-17.5/10/3/PurpleBullet
+100.41/17.5/10/3/PurpleBullet
 # 기본 박자
 #102.08/-3/-3/3/bullet_blue
 #102.57/-3/-3/3/bullet_blue
-101.82/-8/-4/3/PurpleBullet
-101.82/8/-4/3/PurpleBullet
+101.82/-17.5/-10/3/PurpleBullet
+101.82/17.5/-10/3/PurpleBullet
 #103.11/-3/-3/3/bullet_blue
 #103.85/-3/-3/3/bullet_blue
-#103.20/-8/4/3/PurpleBullet
-#103.20/8/4/3/PurpleBullet
+#103.20/-17.5/10/3/PurpleBullet
+#103.20/17.5/10/3/PurpleBullet
 #여기까지 기본
 # 마지막 파트
-116.05/17/0/3/circleBullet//20
-116.66/17/0/3/circleBullet//25
+116.05/-17/0/3/circleBullet//20
+116.66/-17/0/3/circleBullet//25
 117.84/-17/0/3/circleBullet//20
 118.18/17/0/3/circleBullet//20
 118.88/17/0/3/circleBullet//25

@@ -98,6 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fcf20619b938e446b662e5c46b26794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patStartTime: 0
+  patDuration: 0
+  patRot: 0
+  patRotAng: 0
+  patRotStartTime: 0
+  patRotTime: 0
   moveSpeed: 3
   waitTime: 0
 --- !u!58 &3334208064250381097
@@ -233,6 +239,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fcf20619b938e446b662e5c46b26794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patStartTime: 0
+  patDuration: 0
+  patRot: 0
+  patRotAng: 0
+  patRotStartTime: 0
+  patRotTime: 0
   moveSpeed: 3
   waitTime: 0.3
 --- !u!58 &4443652936456287798
@@ -368,6 +380,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fcf20619b938e446b662e5c46b26794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patStartTime: 0
+  patDuration: 0
+  patRot: 0
+  patRotAng: 0
+  patRotStartTime: 0
+  patRotTime: 0
   moveSpeed: 3
   waitTime: 0.1
 --- !u!58 &4933242617591813305
@@ -503,6 +521,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fcf20619b938e446b662e5c46b26794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patStartTime: 0
+  patDuration: 0
+  patRot: 0
+  patRotAng: 0
+  patRotStartTime: 0
+  patRotTime: 0
   moveSpeed: 3
   waitTime: 0.4
 --- !u!58 &6734066496332720205
@@ -638,6 +662,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fcf20619b938e446b662e5c46b26794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patStartTime: 0
+  patDuration: 0
+  patRot: 0
+  patRotAng: 0
+  patRotStartTime: 0
+  patRotTime: 0
   moveSpeed: 3
   waitTime: 0.2
 --- !u!58 &7354407826531372181
@@ -686,6 +716,7 @@ GameObject:
   - component: {fileID: 2154506639448180520}
   - component: {fileID: 9115279274521128447}
   - component: {fileID: 4781450875457446176}
+  - component: {fileID: -1693677913481404037}
   m_Layer: 0
   m_Name: LongRed
   m_TagString: Pattern
@@ -752,3 +783,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e398c903f8c8ea4190fef7b29cb3c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1693677913481404037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7007034709391974975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59401576849708b4ab68a5d4d597b570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroy: 15

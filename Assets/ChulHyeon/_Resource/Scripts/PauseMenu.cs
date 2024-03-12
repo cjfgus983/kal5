@@ -8,7 +8,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
 	public AudioSource backgroundMusic;
 
-
 	public void Pause()
 	{
 		pauseMenu.SetActive(true);
@@ -31,4 +30,5 @@ public class PauseMenu : MonoBehaviour
 		Time.timeScale = 1f;
 		SceneManager.LoadScene(sceneID);
 	}
+
 }
