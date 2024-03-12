@@ -8,11 +8,16 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
 	public AudioSource backgroundMusic;
 
-	public void Pause()
+	public bool isLobby;
+
+    public void Pause()
 	{
 		pauseMenu.SetActive(true);
 		Time.timeScale = 0f;
-		backgroundMusic.Pause();
+		if (backgroundMusic != null)
+        {
+			backgroundMusic.Pause();
+		}
 		transform.gameObject.SetActive(false);
 
 	}
@@ -21,14 +26,17 @@ public class PauseMenu : MonoBehaviour
 	{
 		pauseMenu.SetActive(false);
 		Time.timeScale = 1f;
-		backgroundMusic.UnPause();
+		if (backgroundMusic != null)
+		{
+			backgroundMusic.UnPause();
+		}
 		transform.gameObject.SetActive(true);
 	}
 
-	public void Home(int sceneID)
+	public void Home()
 	{
 		Time.timeScale = 1f;
-		SceneManager.LoadScene(sceneID);
+		SceneManager.LoadScene("Lobby");
 	}
 
 }
