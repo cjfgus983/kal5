@@ -8,14 +8,11 @@ using UnityEngine;
 public class LobbyManager : MonoBehaviour
 {
     public List<string> sceneList = new List<string>();
-    public GameObject musicList;
+    public List<GameObject> musicList = new List<GameObject>();
     public GameObject startButton;
     public GameObject easyButton;
     public GameObject hardButton;
 
-    public LeanTweenType tweenType;
-    public Vector3 targetPos;
-    Vector3 pageStep;
     public int stageNum;
     bool canSelect;
     // Start is called before the first frame update
@@ -23,8 +20,6 @@ public class LobbyManager : MonoBehaviour
     {
         canSelect = true;
         stageNum = 0;
-        pageStep = new Vector3(1000, 0, 0);
-        targetPos = new Vector3(1000, 0, 0);
     }
 
     // Update is called once per frame
@@ -48,22 +43,30 @@ public class LobbyManager : MonoBehaviour
             SelectInLobby();
         }
 
-        
+        ChangeMusic(stageNum);
     }
 
     void SelectInLobby()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            OnLeftArrowClick();
+            stageNum--;
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            OnRightArrowClick();
+            stageNum++;
         }
 
-        
+        if (stageNum < 0)
+        {
+            stageNum = sceneList.Count - 1;
+        }
+
+        if (stageNum > sceneList.Count - 1)
+        {
+            stageNum = 0;
+        }
 
     }
 
@@ -74,29 +77,10 @@ public class LobbyManager : MonoBehaviour
 
     void ChangeMusic(int num)
     {
-        if (stageNum < 0)
+        for (int i = 0; i < musicList.Count; i++)
         {
-            stageNum = sceneList.Count - 1;
+            
         }
-
-        if (stageNum > sceneList.Count - 1)
-        {
-            stageNum = 0;
-        }
-        targetPos = new Vector3(1000, 0, 0) - pageStep * stageNum;
-        musicList.GetComponent<RectTransform>().LeanMoveLocal(targetPos, 0.5f).setEase(tweenType);
-    }
-
-    public void OnLeftArrowClick()
-    {
-        stageNum--;
-        ChangeMusic(stageNum);
-    }
-
-    public void OnRightArrowClick()
-    {
-        stageNum++;
-        ChangeMusic(stageNum);
     }
 
     public void StartButton()
