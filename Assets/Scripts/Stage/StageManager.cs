@@ -65,4 +65,9 @@ public class StageManager : MonoBehaviour
     {
         SceneManager.LoadScene(stageName);
     }
+
+    public void GoLobby()
+	{
+        SceneManager.LoadScene("Lobby");
+    }
 }

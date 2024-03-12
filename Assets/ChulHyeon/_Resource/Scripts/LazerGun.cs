@@ -33,7 +33,7 @@ public class LazerGun : PatternData
     {
         yield return new WaitForSeconds(1f);
         Quaternion rotation = transform.rotation;
-        Vector3 spawnPosition = transform.position + rotation * new Vector3(-11.8f, 0f, 0f);
+        Vector3 spawnPosition = transform.position + rotation * new Vector3(-26.7f, 0f, 0f);
         GameObject lazer = Instantiate(lazerPrefab, spawnPosition, transform.rotation);
 
         lazer.transform.parent = transform;

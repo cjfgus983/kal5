@@ -13,6 +13,8 @@ public class CircleBullet : PatternData
     public int roundNumB = 15;
     public int roundNum = 10;
 
+
+    public int speed = 10;
     private int remain;
     protected override void Start()
     {
@@ -49,7 +51,7 @@ public class CircleBullet : PatternData
             newBullet.transform.Rotate(rotVec);
 
             Rigidbody2D bulletRigidbody = newBullet.GetComponent<Rigidbody2D>();
-            bulletRigidbody.AddForce(spawnPosition.normalized * 5, ForceMode2D.Impulse);
+            bulletRigidbody.AddForce(spawnPosition.normalized * speed, ForceMode2D.Impulse);
         }
 
         remain--;

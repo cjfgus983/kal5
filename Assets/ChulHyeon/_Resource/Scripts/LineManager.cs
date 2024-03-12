@@ -13,7 +13,6 @@ public class LineManager : MonoBehaviour
     bool startAnim;
     public float startTime;
     public float endTime;
-    float elapsedTime = 0f;
     void Start()
     {
         startAnim = false;

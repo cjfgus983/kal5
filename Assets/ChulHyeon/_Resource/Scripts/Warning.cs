@@ -17,6 +17,9 @@ public class Warning : PatternData
         Invoke("RemoveObject", 1f);
 
         player = GameObject.Find("Player");
+        Vector3 newPosition = transform.position;
+        newPosition.x = player.transform.position.x;
+        transform.position = newPosition;
     }
 
     protected override void Update()
