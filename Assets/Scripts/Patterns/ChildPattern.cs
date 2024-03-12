@@ -14,5 +14,6 @@ public class ChildPattern : PatternData
     protected override void Update()
     {
         base.Update();
+
     }
 }

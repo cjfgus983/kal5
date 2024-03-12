@@ -12,6 +12,7 @@ public class LobbyManager : MonoBehaviour
     public GameObject startButton;
     public GameObject easyButton;
     public GameObject hardButton;
+
     public int stageNum;
     bool canSelect;
     // Start is called before the first frame update
@@ -78,12 +79,7 @@ public class LobbyManager : MonoBehaviour
     {
         for (int i = 0; i < musicList.Count; i++)
         {
-            if (i == num)
-            {
-                musicList[i].SetActive(true);
-                continue;
-            }
-            musicList[i].SetActive(false);
+            /*musicList[i].GetComponent<RectTransform>().LeanMoveLocal(new Vector3(-1000 + 1000 * stageNum, 0, 0));*/
         }
     }
 
