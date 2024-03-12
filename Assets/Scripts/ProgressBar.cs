@@ -13,7 +13,7 @@ public class ProgressBar : MonoBehaviour
         if (musicSource.isPlaying)
         {
             progressBar.value = musicSource.time / musicSource.clip.length;
-        } else if (musicSource.enabled == true && musicSource.isPlaying == false)
+        } else if (musicSource.time >= musicSource.clip.length)
         {
             progressBar.value = 1;
         }

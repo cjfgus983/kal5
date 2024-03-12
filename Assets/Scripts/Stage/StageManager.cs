@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 
 public class StageManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class StageManager : MonoBehaviour
 
     public string stageName;
 
+    public Slider progressBar;
+    public bool isClear;
     public AudioSource backgroundSound;
     private void Awake()
     {
@@ -22,6 +25,7 @@ public class StageManager : MonoBehaviour
     {
         StartCoroutine(StageStart());
         pm.GetComponent<PatternManager>().PatternStart();
+        isClear = false;
     }
 
     // Update is called once per frame
@@ -58,6 +62,17 @@ public class StageManager : MonoBehaviour
             player.GetComponent<PlayerController>().canMove = false;
             backgroundSound.enabled = false;
             pm.SetActive(false);
+        }
+    }
+    void ProgressBar()
+    {
+        if (!isClear)
+        {
+            progressBar.value = backgroundSound.time / backgroundSound.clip.length;
+        }
+        else
+        {
+            progressBar.value = 1;
         }
     }
 
