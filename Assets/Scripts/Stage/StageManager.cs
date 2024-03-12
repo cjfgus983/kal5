@@ -13,7 +13,7 @@ public class StageManager : MonoBehaviour
 
     public string stageName;
 
-    public Slider progressBar;
+    public GameObject progressBar;
     public bool isClear;
     public AudioSource backgroundSound;
     private void Awake()
@@ -68,11 +68,11 @@ public class StageManager : MonoBehaviour
     {
         if (!isClear)
         {
-            progressBar.value = backgroundSound.time / backgroundSound.clip.length;
+            progressBar.GetComponent<Slider>().value = backgroundSound.time / backgroundSound.clip.length;
         }
         else
         {
-            progressBar.value = 1;
+            progressBar.GetComponent<Slider>().value = 1;
         }
     }
 
