@@ -25,10 +25,10 @@ public class PauseMenu : MonoBehaviour
 		transform.gameObject.SetActive(true);
 	}
 
-	public void Home(int sceneID)
+	public void Home()
 	{
 		Time.timeScale = 1f;
-		SceneManager.LoadScene(sceneID);
+		SceneManager.LoadScene("Lobby);
 	}
 
 }
