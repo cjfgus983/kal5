@@ -696,13 +696,11 @@ MonoBehaviour:
   - Stage1
   - Stage2
   - Stage3
-  musicList:
-  - {fileID: 1041339967}
-  - {fileID: 910766860}
-  - {fileID: 103538028}
+  musicList: {fileID: 2023899067}
   startButton: {fileID: 261853111}
   easyButton: {fileID: 1975117403}
   hardButton: {fileID: 876326030}
+  tweenType: 6
   stageNum: 0
 --- !u!1 &534966731
 GameObject:
@@ -1162,8 +1160,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 757654794}
-        m_TargetAssemblyTypeName: StageSelectButton, Assembly-CSharp
+      - m_Target: {fileID: 486461895}
+        m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: OnLeftArrowClick
         m_Mode: 1
         m_Arguments:
@@ -2008,8 +2006,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1254941032}
-        m_TargetAssemblyTypeName: StageSelectButton, Assembly-CSharp
+      - m_Target: {fileID: 486461895}
+        m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: OnRightArrowClick
         m_Mode: 1
         m_Arguments:
