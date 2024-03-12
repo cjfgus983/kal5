@@ -51,12 +51,12 @@ public class LaserPattern2 : PatternData
     }
     IEnumerator FireBullet()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < setFalseChild.Count; i++)
         {
             setFalseChild[i].SetActive(false);
         }
-        yield return new WaitForSeconds(bulletTiming - 0.8f);
+        yield return new WaitForSeconds(bulletTiming - 0.5f);
         for (int i = 0; i < setTrueChild.Count; i++)
         {
             setTrueChild[i].SetActive(true);
