@@ -44,6 +44,7 @@ public class StageManager : MonoBehaviour
         pm.GetComponent<PatternManager>().PatternStart();
         yield return new WaitForSeconds(3.0f);
         StartMusic();
+        ClearStage(backgroundSound.clip.length);
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -74,6 +75,12 @@ public class StageManager : MonoBehaviour
         {
             progressBar.GetComponent<Slider>().value = 1;
         }
+    }
+
+    IEnumerator ClearStage(float music)
+    {
+        yield return new WaitForSeconds(music);
+        isClear = true;
     }
 
     public void Retry()
