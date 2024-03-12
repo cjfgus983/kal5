@@ -16,6 +16,8 @@ public class StageManager : MonoBehaviour
     public GameObject progressBar;
     public bool isClear;
     public AudioSource backgroundSound;
+
+    public GameObject ClearMenu;
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -76,6 +78,7 @@ public class StageManager : MonoBehaviour
         else
         {
             progressBar.GetComponent<Slider>().value = 1;
+
         }
     }
 
@@ -83,6 +86,10 @@ public class StageManager : MonoBehaviour
     {
         yield return new WaitForSeconds(music);
         isClear = true;
+        yield return new WaitForSeconds(3.0f);
+        ClearMenu.SetActive(true);
+        Time.timeScale = 0;
+
     }
 
     public void Retry()
