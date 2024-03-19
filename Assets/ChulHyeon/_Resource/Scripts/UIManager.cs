@@ -49,7 +49,6 @@ public class UIManager : MonoBehaviour
 
         if(initialPanel.activeSelf == true)
 		{
-            Debug.Log("hello");
             pauseMenu.SetActive(false);
 		}
 	}

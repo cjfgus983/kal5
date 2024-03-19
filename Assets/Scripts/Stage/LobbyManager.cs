@@ -62,9 +62,7 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-        
-
-    }
+ 
 
     void SelectDifficulty()
     {
