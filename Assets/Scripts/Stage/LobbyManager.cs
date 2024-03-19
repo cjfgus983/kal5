@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-using UnityEditor.SearchService;
+using UnityEngine.SearchService;
 
 using UnityEngine;
 
@@ -60,10 +60,9 @@ public class LobbyManager : MonoBehaviour
         {
             OnRightArrowClick();
         }
-
-        
-
     }
+
+ 
 
     void SelectDifficulty()
     {

@@ -11,11 +11,21 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject pauseButton;
 
-    void Start()
+    public GameObject dontDetroy;
+
+	private void Awake()
+	{
+        dontDetroy = GameObject.Find("DontDestroy");
+    }
+
+	void Start()
     {
-        initialPanel.SetActive(true);
-        Time.timeScale = 0f;
-        backgroundMusic.Pause();
+        if (dontDetroy.GetComponent<DontDestroy>().prevScene == "Lobby") // 로비에서 왔다면
+		{
+            initialPanel.SetActive(true);
+            Time.timeScale = 0f;
+            backgroundMusic.Pause();
+        }
 
     }
 
@@ -36,6 +46,11 @@ public class UIManager : MonoBehaviour
 		{
             pauseButton.SetActive(true);
         }
+
+        if(initialPanel.activeSelf == true)
+		{
+            pauseMenu.SetActive(false);
+		}
 	}
 
 }
