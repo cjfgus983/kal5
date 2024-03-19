@@ -10,6 +10,7 @@ public class StageManager : MonoBehaviour
     public GameObject pm;
     public GameObject player;
     public GameObject gameOverUI;
+    public GameObject StageData;
 
     public string stageName;
 
@@ -28,6 +29,15 @@ public class StageManager : MonoBehaviour
         StartCoroutine(StageStart());
         pm.GetComponent<PatternManager>().PatternStart();
         isClear = false;
+        StageData = GameObject.Find("StageData");
+        if (StageData.GetComponent<StageData>().isHard)
+        {
+            player.GetComponent<PlayerController>().hp = 3;
+        }
+        if (StageData.GetComponent<StageData>().isEasy)
+        {
+            player.GetComponent<PlayerController>().hp = 5;
+        }
     }
 
     // Update is called once per frame
