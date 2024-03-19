@@ -1559,7 +1559,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8fd0024da04a6d542b2849ed2f679337, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -17069,13 +17069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad9f99d7a4d5a745831f2871adbb406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patStartTime: 107.76
+  patStartTime: 107.78
   patDuration: 4.35
   patRot: 0
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  aimDuration: 2
+  aimDuration: 1
   bulletTiming: 1
   child1: {fileID: 514335425}
   child2: {fileID: 546508124}
@@ -50259,6 +50259,7 @@ MonoBehaviour:
   pm: {fileID: 1281732982}
   player: {fileID: 537645715}
   gameOverUI: {fileID: 1088928224}
+  StageData: {fileID: 0}
   stageName: Stage3
   progressBar: {fileID: 2039222880}
   isClear: 0
@@ -58931,6 +58932,7 @@ MonoBehaviour:
   - {fileID: 1590326368}
   - {fileID: 1821888280}
   - {fileID: 1951003964}
+  - {fileID: 2015536452}
   patternManager: {fileID: 1281732982}
   patPos: {x: 0, y: 0}
   patStartTime: 0
@@ -59044,6 +59046,7 @@ Transform:
   - {fileID: 1590326370}
   - {fileID: 1821888282}
   - {fileID: 1951003966}
+  - {fileID: 2015536455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298158836
@@ -71308,7 +71311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad9f99d7a4d5a745831f2871adbb406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patStartTime: 106.42
+  patStartTime: 105.47
   patDuration: 4
   patRot: 0
   patRotAng: 0
@@ -72564,13 +72567,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad9f99d7a4d5a745831f2871adbb406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patStartTime: 108.28
+  patStartTime: 108.27
   patDuration: 3.83
   patRot: 0
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  aimDuration: 2
+  aimDuration: 1
   bulletTiming: 1
   child1: {fileID: 2070688667}
   child2: {fileID: 1914986621}
@@ -74932,13 +74935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad9f99d7a4d5a745831f2871adbb406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patStartTime: 108.76
+  patStartTime: 108.72
   patDuration: 3.35
   patRot: 0
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  aimDuration: 2
+  aimDuration: 1
   bulletTiming: 1
   child1: {fileID: 149395883}
   child2: {fileID: 2117973302}
@@ -81159,7 +81162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad9f99d7a4d5a745831f2871adbb406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patStartTime: 105.1
+  patStartTime: 104.09
   patDuration: 5.32
   patRot: 0
   patRotAng: 0
@@ -82054,13 +82057,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad9f99d7a4d5a745831f2871adbb406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patStartTime: 109.11
+  patStartTime: 109.09
   patDuration: 3
   patRot: 0
   patRotAng: 0
   patRotStartTime: 0
   patRotTime: 0
-  aimDuration: 2
+  aimDuration: 1
   bulletTiming: 1
   child1: {fileID: 843450837}
   child2: {fileID: 1716545622}
@@ -87817,6 +87820,109 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 294396829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2015536452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015536455}
+  - component: {fileID: 2015536454}
+  - component: {fileID: 2015536453}
+  m_Layer: 0
+  m_Name: pattern94
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2015536453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015536452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad0246b79695224985d85483d407b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patStartTime: 68.4
+  patDuration: 60
+  patRot: 0
+  patRotAng: 0
+  patRotStartTime: 0
+  patRotTime: 0
+--- !u!212 &2015536454
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015536452}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -9
+  m_Sprite: {fileID: 7482667652216324306, guid: cb4f1581c4eebd743ac8bd03362ac843, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.23529412}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 14.56, y: 8.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2015536455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015536452}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1281732984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019442323
 GameObject:
