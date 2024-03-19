@@ -99,6 +99,7 @@ public class StageManager : MonoBehaviour
 
     public void GoLobby()
 	{
+        Time.timeScale = 1;
         SceneManager.LoadScene("Lobby");
     }
 }

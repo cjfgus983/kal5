@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 
-using UnityEditor.SearchService;
+using UnityEngine.SearchService;
 
 using UnityEngine;
 
 public class LobbyManager : MonoBehaviour
 {
     public List<string> sceneList = new List<string>();
-    public List<GameObject> musicList = new List<GameObject>();
+    public GameObject musicList;
     public GameObject startButton;
     public GameObject easyButton;
     public GameObject hardButton;
 
+    Vector3 targetPos;
+    Vector3 pageStep;
+    public LeanTweenType tweenType;
     public int stageNum;
     bool canSelect;
     // Start is called before the first frame update
@@ -20,6 +23,8 @@ public class LobbyManager : MonoBehaviour
     {
         canSelect = true;
         stageNum = 0;
+        targetPos = new Vector3(1000, 0, 0);
+        pageStep = new Vector3(1000, 0, 0);
     }
 
     // Update is called once per frame
@@ -42,22 +47,34 @@ public class LobbyManager : MonoBehaviour
         {
             SelectInLobby();
         }
-
-        ChangeMusic(stageNum);
     }
 
     void SelectInLobby()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            stageNum--;
+            OnLeftArrowClick();
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            stageNum++;
+            OnRightArrowClick();
         }
+    }
 
+    void SelectDifficulty()
+    {
+
+    }
+
+    void ChangeMusic()
+    {
+        musicList.GetComponent<RectTransform>().LeanMoveLocal(targetPos - pageStep * stageNum, 0.5f).setEase(tweenType);
+    }
+
+    public void OnLeftArrowClick()
+    {
+        stageNum--;
         if (stageNum < 0)
         {
             stageNum = sceneList.Count - 1;
@@ -67,20 +84,22 @@ public class LobbyManager : MonoBehaviour
         {
             stageNum = 0;
         }
-
+        ChangeMusic();
     }
 
-    void SelectDifficulty()
+    public void OnRightArrowClick()
     {
-
-    }
-
-    void ChangeMusic(int num)
-    {
-        for (int i = 0; i < musicList.Count; i++)
+        stageNum++;
+        if (stageNum < 0)
         {
-            
+            stageNum = sceneList.Count - 1;
         }
+
+        if (stageNum > sceneList.Count - 1)
+        {
+            stageNum = 0;
+        }
+        ChangeMusic();
     }
 
     public void StartButton()
