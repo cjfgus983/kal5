@@ -8,11 +8,13 @@ using UnityEngine;
 public class LobbyManager : MonoBehaviour
 {
     public List<string> sceneList = new List<string>();
+    public List<AudioClip> bgmList = new List<AudioClip>();
     public GameObject musicList;
     public GameObject startButton;
     public GameObject easyButton;
     public GameObject hardButton;
 
+    AudioSource audioSource;
     Vector3 targetPos;
     Vector3 pageStep;
     public LeanTweenType tweenType;
@@ -25,6 +27,9 @@ public class LobbyManager : MonoBehaviour
         stageNum = 0;
         targetPos = new Vector3(1000, 0, 0);
         pageStep = new Vector3(1000, 0, 0);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = bgmList[stageNum];
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -46,6 +51,22 @@ public class LobbyManager : MonoBehaviour
         if (canSelect)
         {
             SelectInLobby();
+        }
+
+        if (audioSource.time > 0 && audioSource.time < 3 && audioSource.volume < 0.3f)
+        {
+            audioSource.volume += Time.deltaTime * 0.1f;
+        }
+
+        if (audioSource.time > 17.0f)
+        {
+            audioSource.volume -= Time.deltaTime * 0.1f;
+        }
+
+        if (audioSource.time > 20.0f)
+        {
+            audioSource.time = 0;
+            
         }
     }
 
@@ -72,6 +93,9 @@ public class LobbyManager : MonoBehaviour
     void ChangeMusic()
     {
         musicList.GetComponent<RectTransform>().LeanMoveLocal(targetPos - pageStep * stageNum, 0.5f).setEase(tweenType);
+        audioSource.clip = bgmList[stageNum];
+        audioSource.volume = 0;
+        audioSource.Play();
     }
 
     public void OnLeftArrowClick()
