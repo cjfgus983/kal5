@@ -130,9 +130,12 @@ public class LobbyManager : MonoBehaviour
 
     public void StartButton()
     {
-        canSelect = false;
-        startButton.SetActive(false);
-        easyButton.SetActive(true);
-        hardButton.SetActive(true);
+        if(stageNum < sceneList.Count - 1)
+		{
+            canSelect = false;
+            startButton.SetActive(false);
+            easyButton.SetActive(true);
+            hardButton.SetActive(true);
+        }
     }
 }
