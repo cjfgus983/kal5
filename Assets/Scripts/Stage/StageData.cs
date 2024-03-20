@@ -6,9 +6,20 @@ public class StageData : MonoBehaviour
 {
     public bool isEasy;
     public bool isHard;
+
+    private static StageData instance;
+
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }   
     // Start is called before the first frame update
     void Start()

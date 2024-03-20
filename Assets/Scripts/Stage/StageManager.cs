@@ -29,15 +29,6 @@ public class StageManager : MonoBehaviour
         StartCoroutine(StageStart());
         pm.GetComponent<PatternManager>().PatternStart();
         isClear = false;
-        StageData = GameObject.Find("StageData");
-        if (StageData.GetComponent<StageData>().isHard)
-        {
-            player.GetComponent<PlayerController>().hp = 3;
-        }
-        if (StageData.GetComponent<StageData>().isEasy)
-        {
-            player.GetComponent<PlayerController>().hp = 5;
-        }
     }
 
     // Update is called once per frame
@@ -55,9 +46,19 @@ public class StageManager : MonoBehaviour
 
     IEnumerator StageStart()
     {
+        StageData = GameObject.Find("StageData");
+        if (StageData.GetComponent<StageData>().isHard)
+        {
+            player.GetComponent<PlayerController>().hp = 3;
+        }
+        if (StageData.GetComponent<StageData>().isEasy)
+        {
+            player.GetComponent<PlayerController>().hp = 5;
+        }
         pm.GetComponent<PatternManager>().PatternStart();
         yield return new WaitForSeconds(3.0f);
         StartMusic();
+
         
     }
 
