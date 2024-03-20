@@ -13,5 +13,10 @@ public class WaitMusic : MonoBehaviour
     {
         bgm = GetComponent<AudioSource>();
         bgm.enabled = false;
-    }  
+    }
+
+	private void Update()
+	{
+        curTime += Time.deltaTime;
+	}
 }
